@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Page title-->
+    <title>INDEX HTML</title>
+    <!--Fonts used - cdn-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!--Fontwesome icon-->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+    <!--Local style file-->
+    <link rel="stylesheet" href="build/css/app.css" />
+  </head>
+  <body>
+    <!------------------HEADER------------------->
+    <header class="container-header">
+      <div class="Hamburger-menu">
+        <i class="fas fa-bars" id="bars-menu"></i>
+      </div>
+      <div class="mobile-menu" id="mobile-menu">
+        <nav class="navigation-mobile">
+          <ul>
+            <li class="site-nav-mobile-dropdown">
+              <form class="search-box__mobile">
+                <button class="search-button">
+                  <i class="fas fa-search"></i>
+                </button>
+                <div class="div-input">
+                  <input
+                    class=""
+                    type="search"
+                    placeholder="Search high-resolution 360&deg; videos"
+                  />
+                </div>
+                <button class="cross-button">
+                  <i class="fas fa-times cross-button__icon"></i>
+                </button>
+              </form>
+            </li>
+            <li class="site-nav-mobile-dropdown">
+              <a href="#">About Laplace</a>
+            </li>
+            <li class="site-nav-mobile-dropdown">
+              <a href="#">Submit a VR</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="logo">
+        <div class="logo-image">
+          <img src="build/img/combined-shape-2.webp" alt="combined shape" />
+        </div>
+        <div class="logo-slogan">
+          <img src="build/img/laplace.webp" alt="laplace" />
+          <span class="slogan">Space experience for everyone</span>
+        </div>
+      </div>
+      <nav class="navigation">
+        <div class="search-box">
+          <form class="search-box__formulario">
+            <button class="search-button">
+              <i class="fas fa-search"></i>
+            </button>
+            <div class="div-input">
+              <input
+                class=""
+                type="search"
+                placeholder="Search high-resolution 360&deg; videos"
+              />
+            </div>
+            <button class="cross-button">
+              <i class="fas fa-times cross-button__icon"></i>
+            </button>
+          </form>
+        </div>
+        <ul class="navigation-desktop">
+          <li>
+            <a href="#">About Laplace</a>
+          </li>
+          <li>
+            <a href="#">Submit a VR</a>
+          </li>
+        </ul>
+        <ul class="navigation-actions">
+          <li><i class="far fa-user-circle" id="user"></i></li>
+          <ul class="navigation-actions__menu" id="navigation-actions__menu">
+            <li class="nav-menu__item"><a href="#">My Profile</a></li>
+            <li class="nav-menu__item"><a href="#">Stats</a></li>
+            <li class="nav-menu__item"><a href="#">Settings</a></li>
+            <li class="nav-menu__item"><a href="#">Sign out</a></li>
+          </ul>
+        </ul>
+      </nav>
+    </header>
+    
+    <!------------------MAIN CONTAINER------------------->
+
+    <!------------------FOOTER--------------------->
+    <footer class="footer">
+      <div class="footer-container container">
+        <div class="first-section">
+          <div class="logo-tagline">
+            <a href="/">
+              <img src="build/img/laplace_2x-removebg-preview.png" alt=""
+            /></a>
+            <p class="tagline">
+              <span>Laplace is the 360 video sharing community for</span
+              >creatives to share, grow and get connected
+            </p>
+          </div>
+          <div class="social-links-container">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="second-section">
+          <p class="copyright-section">2021 Laplace. All rights reserved</p>
+          <div class="policy-terms">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!------------------SCRIPTS------------------->
+    <script src="build/js/bundle.min.js"></script>
+  </body>
+</html>

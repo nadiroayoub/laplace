@@ -1,0 +1,51 @@
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+body {
+  font-family: $principal_font;
+  font-size: 1.6rem;
+}
+p {
+  color: $black;
+  font-size: 2rem;
+}
+.contenedor {
+  width: 95%;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3 {
+  font-family: $principal_font;
+  margin: 0 0 5rem / 2 0;
+  font-weight: 900;
+  color: $blackLight;
+  text-align: center;
+}
+
+h1 {
+  font-size: 4rem;
+}
+h2 {
+  font-size: 3.6rem;
+}
+h3 {
+  font-size: 3rem;
+  text-align: center;
+}

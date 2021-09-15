@@ -1,0 +1,34 @@
+/****************COLORS****************/
+$black: #000000;
+$blackLight: #171717;
+$grayDark: #3b3f44;
+$gray: #767676;
+$grayLight: #cccccc;
+$grisLighter: #eeeeee;
+$grisLightest: #f3f3f4;
+
+$green: #00dabb;
+
+/****************FONTS FAMILY****************/
+// Pretendard
+// 시스템에 가능한 맞추고자 한다면 아래와 같은 font-family 구성을 추천합니다.
+$principal_font: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
+  Pretendard, Roboto, "Noto Sans KR", "Segoe UI", "Malgun Gothic", sans-serif;
+// Montserrat
+$secondary_font: "Montserrat", sans-serif;
+
+/****************MEDIA QUERIES SIZE****************/
+$mobile: 400px;
+$tablet: 960px;
+$desktop: 1100px;
+
+/****************FONT WEIGHTS****************/
+$thin: 100;
+$extraLight: 200;
+$light: 300;
+$regular : 400;
+$medium: 500;
+$semiBold: 600; 
+$bold: 700;
+$extraBold: 800;
+$black: 900;

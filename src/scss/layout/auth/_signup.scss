@@ -1,22 +1,73 @@
+.main-container {
+  padding: 0 20px;
+  @include desktop(){
+    display: flex;
+    padding: 0;
+  }
+}
+.auth-sidebar, .content {
+  width: 100%;
+  max-width: 42rem;
+  margin: auto;
+}
 .auth-sidebar {
+  @include desktop(){
+    max-width: 37.917%;
+    height: 100vh;
+    background-image: url('/build/img/auth/signup\ background.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: 0;
+  }
   .auth-sidebar-content {
+    padding: 0;
     .header {
       .logo {
         display: block;
         margin-bottom: 3rem;
         img:first-child {
           display: none;
+          @include desktop(){
+            display: block;
+          }
         }
         img:nth-child(2) {
           margin-top: 5rem;
+          @include desktop(){
+            display: none;
+          }
+        }
+        @include desktop(){
+          margin-bottom: 22.1rem;
         }
       }
       h1 {
         display: none;
+        @include desktop(){
+          display: block;
+          text-align: left;
+          color: $white;
+          font-family: 'Montserrat', sans-serif;
+          font-size: 5.6rem;
+          font-weight: bold;
+        }
+      }
+      @include desktop(){
+        margin-bottom: 23.3rem;
       }
     }
-    .artwork {
-      display: none;
+    .footer {
+      p{
+        color: #fff;
+        font-size: 2rem;
+        margin: 0;
+      }
+    }
+    @include desktop(){
+      display: flex;
+      flex-direction: column;
+      padding: 8.2rem 26.7rem 9.4rem 8.3rem;
+      height: 100%;
     }
   }
 }
@@ -27,6 +78,9 @@
       font-size: 2.6rem;
       font-weight: $extraBold;
       margin-bottom: 2.7rem;
+      @include desktop(){
+        font-size: 4.4rem;
+      }
     }
     .auth-connections {
       p {
@@ -35,6 +89,9 @@
         line-height: 2rem;
         color: #171717;
         margin-bottom: 3rem;
+        @include desktop(){
+          font-size: 1.8rem;
+        }
         a {
           color: #767676;
         }
@@ -53,11 +110,11 @@
   .auth-form {
     margin-top: 5rem;
     .form-field {
+      margin-bottom: 3rem;
       fieldset {
         padding: 0;
         border: none;
       }
-      margin-bottom: 3rem;
       label {
         display: block;
         font-weight: $bold;
@@ -71,6 +128,7 @@
         padding-top: 1rem;
         padding-left: 1.3rem;
         padding-bottom: 1rem;
+        width: 100%;
         &:focus {
           outline: none;
           box-shadow: 0 0 6px 0 $green;
@@ -155,7 +213,31 @@
         line-height: 1.43;
         letter-spacing: 0.3px;
         font-weight: $semiBold;
+        @include desktop(){
+          width: 48%;
+          margin: 0;
+        }
       }
     }
+    .form-field-group{
+      @include desktop{
+        display: flex;
+        .form-field{
+          width: 50%;
+        }
+        .form-field:last-child{
+          margin-left: 2.4rem;
+        }
+      }
+    }
+  }
+  @include desktop(){
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex: 1;
+    width: 100%;
+    height: 100vh;
+    max-width: 63.6rem;
   }
 }

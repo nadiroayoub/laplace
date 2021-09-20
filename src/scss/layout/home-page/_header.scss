@@ -1,0 +1,190 @@
+.header {
+  margin-top: 1.4rem;
+  .navigation {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0 3rem;
+    background-color: $white;
+    height: 4rem;
+    .logo-and-searchbar {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      .logo {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        .logo-slogan {
+          display: flex;
+          flex-direction: column;
+          white-space: nowrap;
+          margin-left: 0.8rem;
+          flex-direction: column;
+          .logo_laplace {
+            width: fit-content;
+          }
+          .slogan {
+            margin: 0;
+            font-family: $secondary_font;
+            font-family: Montserrat;
+            font-size: 1.2rem;
+            font-weight: $light;
+            color: $grayDark;
+          }
+        }
+      }
+      .search-bar {
+        margin-left: 7.7rem;
+        width: 100%;
+        form {
+          display: inline-flex;
+          background-color: $grayLighter;
+          width: 100%;
+          padding: 1.1rem 49.35rem 1.1rem 1.7rem;
+          border-radius: 20px;
+          background-color: $grayLighter;
+          .button-search {
+            display: flex;
+            align-items: center;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            img {
+              width: 1.3rem;
+              height: 1.3rem;
+            }
+          }
+          .search-div {
+            flex-grow: 1;
+            display: flex;
+            .search-input {
+              flex-grow: 1;
+              width: 100%;
+              background: none;
+              border: none;
+              padding-left: 10px;
+              padding-bottom: 2px;
+              &::placeholder {
+                color: $gray;
+              }
+              &:focus {
+                outline: none;
+                color: $blackLight;
+              }
+              &::-webkit-search-cancel-button {
+                -webkit-appearance: none;
+              }
+            }
+          }
+        }
+      }
+    }
+    .navigation-about {
+      padding-left: 6.2rem;
+      padding-right: 3rem;
+      ul {
+        display: inline-block;
+        padding-left: 0;
+        margin: 0;
+        li {
+          display: inline-block;
+          font-size: 1.4rem;
+          font-weight: $semiBold;
+          a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: $gray;
+          }
+        }
+      }
+    }
+    .navigation-join {
+      display: flex;
+      .btn-submit {
+        display: inline-block;
+        margin-right: 3rem;
+        button {
+          color: $gray;
+          font-weight: $semiBold;
+          font-size: 1.4rem;
+          padding: 0.6rem 1.1rem;
+          background-color: transparent;
+          border: 1px solid $grayLight;
+        }
+      }
+      .btns-join {
+        display: inline-flex;
+        align-items: center;
+        position: relative;
+        a:first-of-type {
+          border-color: transparent;
+          border-radius: 0;
+          box-shadow: none;
+          margin-right: 14px;
+          font-size: 1.4rem;
+          font-weight: $semiBold;
+          color: $gray;
+          margin-right: 3rem;
+          &::before {
+            position: absolute;
+            top: 0;
+            left: -15px;
+            width: 1px;
+            height: 32px;
+            content: "";
+            background-color: #d1d1d1;
+            display: inline-block;
+          }
+        }
+        a:nth-child(2) {
+          background-color: $green;
+          color: $white;
+          padding: 0.6rem 1rem 0.6rem 1.1rem;
+        }
+      }
+    }
+  }
+}
+.navigation {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 0;
+  margin-top: 2rem;
+  div {
+    display: flex;
+    ul {
+      display: flex;
+      padding-left: 0;
+      margin-top: 0;
+      a {
+        text-align: center;
+        font-weight: $semiBold;
+        font-size: 1.4rem;
+        margin-left: 3rem;
+        color: $gray;
+      }
+    }
+  }
+  .div-separator {
+    padding-left: 3rem;
+    .separator {
+      background-color: #d1d1d1;
+      width: 0.1rem;
+      height: 3.2rem;
+      display: block;
+    }
+  }
+  .div-navigation{
+    padding-left: 3rem;
+  }
+  .div-button{
+    height: fit-content;
+    .btn-left{
+      background-color: transparent;
+      border: none;
+      padding: auto;
+    }
+  }
+}

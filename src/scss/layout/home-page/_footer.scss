@@ -1,0 +1,17 @@
+.footer {
+  margin-top: 6rem;
+}
+.footer-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  a {
+    margin-bottom: 0.8rem;
+  }
+  span {
+    font-family: $secondary_font;
+    font-size: 1.2rem;
+    font-weight: $light;
+    color: $grayDark;
+  }
+}

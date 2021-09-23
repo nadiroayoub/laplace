@@ -1,0 +1,21 @@
+.architecture-container {
+  margin-top: 7.1rem;
+  .introduction {
+    margin-bottom: 5.1rem;
+    max-width: 50%;
+    .title,
+    .subtitle {
+      text-align: left;
+    }
+    .title {
+      font-size: 4.4rem;
+      font-weight: $extraBold;
+      color: $blackLight;
+      margin-bottom: 1.3rem;
+    }
+    .subtitle {
+      font-size: 1.8rem;
+      font-weight: $regular;
+    }
+  }
+}

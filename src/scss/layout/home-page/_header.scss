@@ -41,7 +41,7 @@
           display: inline-flex;
           background-color: $grayLighter;
           width: 100%;
-          padding: 1.1rem 49.35rem 1.1rem 1.7rem;
+          padding: 1.1rem 1.7rem;
           border-radius: 20px;
           background-color: $grayLighter;
           .button-search {
@@ -172,19 +172,110 @@
     .separator {
       background-color: #d1d1d1;
       width: 0.1rem;
-      height: 3.2rem;
+      height: 3rem;
       display: block;
     }
   }
-  .div-navigation{
+  .container-btn-navigation {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    overflow-x: scroll;
+    position: relative;
+    -ms-overflow-style: none;
+    scrollbar-width: none; /* Firefox */
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    .div-navigation {
+      max-width: 100%;
+      ul {
+        max-width: 100%;
+        li {
+          display: list-item;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+  .btn-arrow {
+    position: absolute;
+    height: fit-content;
+    background-color: $white;
+    &.btn-left {
+      cursor: pointer;
+      display: flex;
+      justify-content: flex-start;
+      border: none;
+      left: 123px;
+      padding: 0;
+      padding-right: 2rem;
+      width: 10rem;
+      z-index: 1;
+      /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&1+0,0+100;White+to+Transparent */
+      background: -moz-linear-gradient(
+        left,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 255, 255, 0) 100%
+      ); /* FF3.6-15 */
+      background: -webkit-linear-gradient(
+        left,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 255, 255, 0) 100%
+      ); /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 255, 255, 0) 100%
+      ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 */
+      display: none;
+      &.active {
+        display: flex;
+      }
+    }
+    &.btn-right {
+      cursor: pointer;
+      display: flex;
+      justify-content: flex-end;
+      padding-right: 0;
+      left: 168rem;
+      width: 10rem;
+      border: none;
+      /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&1+0,0+100;White+to+Transparent */
+      background: -moz-linear-gradient(
+        right,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 255, 255, 0) 100%
+      ); /* FF3.6-15 */
+      background: -webkit-linear-gradient(
+        right,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 255, 255, 0) 100%
+      ); /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(
+        to left,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 255, 255, 0) 100%
+      ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 */
+      display: none;
+      &.active {
+        display: flex;
+      }
+    }
+  }
+  .view-all {
     padding-left: 3rem;
   }
-  .div-button{
-    height: fit-content;
-    .btn-left{
-      background-color: transparent;
-      border: none;
-      padding: auto;
+  .menu-item {
+    a {
+      &.active {
+        border-bottom: 0.6rem solid #000;
+        padding-bottom: 1.8rem;
+        position: relative;
+        z-index: 2;
+      }
     }
   }
 }

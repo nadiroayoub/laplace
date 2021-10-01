@@ -1,20 +1,32 @@
 .architecture-container {
   margin-top: 7.1rem;
+  max-width: 1296px;
+  margin: 7.1rem auto 0 auto;
+  padding: 0 3rem;
   .introduction {
     margin-bottom: 5.1rem;
-    max-width: 50%;
+    max-width: 100%;
+    @include tablet() {
+      max-width: 50%;
+    }
     .title,
     .subtitle {
       text-align: left;
     }
     .title {
-      font-size: 4.4rem;
+      font-size: 2.8rem;
       font-weight: $extraBold;
       color: $blackLight;
       margin-bottom: 1.3rem;
+      @include tablet() {
+        font-size: 4.4rem;
+      }
     }
     .subtitle {
-      font-size: 1.8rem;
+      font-size: 1.6rem;
+      @include tablet() {
+        font-size: 1.8rem;
+      }
       font-weight: $regular;
     }
   }

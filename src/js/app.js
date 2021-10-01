@@ -59,6 +59,22 @@ window.addEventListener("DOMContentLoaded", function (event) {
   let fileVideo;
 
   /**
+   *
+   * Test select countries
+   */
+  fetch(
+    "https://raw.githubusercontent.com/David-Haim-zz/CountriesToCitiesJSON/master/countriesToCities.json"
+  )
+    .then((res) => {
+      return res.json();
+    })
+    .then((data) => {
+      console.log(data);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+  /**
    * Horizontal menu of home page
    */
   if (btnScrollRight) {
@@ -263,13 +279,13 @@ window.addEventListener("DOMContentLoaded", function (event) {
    * Desactivate body scrolling when clicking on submit a vr button
    */
   if (btnSubmitVr) {
-    btnSubmitVr.forEach(btn =>{
+    btnSubmitVr.forEach((btn) => {
       btn.addEventListener("click", () => {
         document.body.classList.add("no-scroll");
         popup[0].classList.add("active");
         popupContainer.classList.add("active");
       });
-    })
+    });
   }
 
   /***********************  SEARCH PAGE SCRIPTS ***********************/

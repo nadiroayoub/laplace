@@ -221,8 +221,8 @@
   .container-home {
     max-width: 129.6rem;
     margin: 0 auto;
-    padding: 0 1.2rem;
-    @include desktop() {
+    padding: 0;
+    @include mobile() {
       padding: 0 1.2rem;
     }
     .filter {
@@ -239,18 +239,29 @@
         .section1,
         .section2 {
           align-self: flex-start;
+          width: 100%;
           @include tablet() {
+            width: auto;
             align-self: none;
           }
         }
         .form-field {
           display: inline-block;
+          width: 100%;
+          @include mobile() {
+            width: auto;
+          }
+          margin-bottom: 2rem;
           fieldset {
             padding: 0;
             margin-right: 1rem;
             border: none;
             position: relative;
             .select {
+              width: 100%;
+              @include mobile() {
+                width: auto;
+              }
               border-radius: 0.4rem;
               border: 1px solid $gray;
               padding: 0.6rem 2rem 0.6rem 1.2rem;

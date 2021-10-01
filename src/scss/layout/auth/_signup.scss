@@ -1,22 +1,23 @@
 .main-container {
   padding: 0 20px;
-  @include desktop(){
+  @include desktop() {
     display: flex;
     padding: 0;
   }
 }
-.auth-sidebar, .content {
+.auth-sidebar,
+.content {
   width: 100%;
   max-width: 42rem;
   margin: auto;
 }
 .auth-sidebar {
-  @include desktop(){
+  @include desktop() {
     max-width: 37.917%;
     height: 100vh;
-    background-image: url('/build/img/auth/signup\ background.png');
+    background-image: url("/build/img/auth/signup\ background.png");
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     margin: 0;
   }
   .auth-sidebar-content {
@@ -27,46 +28,61 @@
         margin-bottom: 3rem;
         img:first-child {
           display: none;
-          @include desktop(){
+          width: 2.26rem;
+          height: 5.4rem;
+          @include desktop() {
             display: block;
           }
         }
         img:nth-child(2) {
+          display: none;
           margin-top: 5rem;
-          @include desktop(){
+          @include desktop() {
             display: none;
           }
         }
-        @include desktop(){
+        img:nth-child(3) {
+          margin-top: 5rem;
+          @include desktop() {
+            display: none;
+          }
+        }
+        @include desktop() {
           margin-bottom: 22.1rem;
         }
       }
       h1 {
         display: none;
-        @include desktop(){
+        @include desktop() {
           display: block;
           text-align: left;
           color: $white;
-          font-family: 'Montserrat', sans-serif;
+          font-family: "Montserrat", sans-serif;
           font-size: 5.6rem;
           font-weight: bold;
         }
       }
-      @include desktop(){
+      @include desktop() {
         margin-bottom: 23.3rem;
+        margin-top: 0;
       }
     }
     .footer {
-      p{
+      display: none;
+      @include desktop() {
+        display: block;
+        margin-top: 0;
+      }
+      p {
         color: #fff;
         font-size: 2rem;
         margin: 0;
       }
     }
-    @include desktop(){
+    @include desktop() {
       display: flex;
       flex-direction: column;
-      padding: 8.2rem 26.7rem 9.4rem 8.3rem;
+      padding: 11.4% 36.67% 9.4rem 8.3rem;
       height: 100%;
     }
   }
@@ -78,7 +94,7 @@
       font-size: 2.6rem;
       font-weight: $extraBold;
       margin-bottom: 2.7rem;
-      @include desktop(){
+      @include desktop() {
         font-size: 4.4rem;
       }
     }
@@ -89,7 +105,7 @@
         line-height: 2rem;
         color: #171717;
         margin-bottom: 3rem;
-        @include desktop(){
+        @include desktop() {
           font-size: 1.8rem;
         }
         a {
@@ -213,25 +229,25 @@
         line-height: 1.43;
         letter-spacing: 0.3px;
         font-weight: $semiBold;
-        @include desktop(){
+        @include desktop() {
           width: 48%;
           margin: 0;
         }
       }
     }
-    .form-field-group{
-      @include desktop{
+    .form-field-group {
+      @include desktop {
         display: flex;
-        .form-field{
+        .form-field {
           width: 50%;
         }
-        .form-field:last-child{
+        .form-field:last-child {
           margin-left: 2.4rem;
         }
       }
     }
   }
-  @include desktop(){
+  @include desktop() {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -239,5 +255,20 @@
     width: 100%;
     height: 100vh;
     max-width: 63.6rem;
+  }
+}
+.main-container_signup {
+  display: flex;
+  margin-top: 0;
+  height: 100vh;
+  padding: 1.2rem;
+  @include desktop() {
+    padding: 0;
+  }
+  .auth-sidebar {
+    display: none;
+    @include desktop() {
+      display: block;
+    }
   }
 }

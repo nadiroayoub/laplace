@@ -1,0 +1,437 @@
+/*SUBMIT VR POPUP*/
+.popup-container {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  z-index: 2;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 600ms;
+  &:target {
+    background-color: rgba(0, 0, 0, 0.8);
+    visibility: visible;
+    opacity: 1;
+  }
+  display: none;
+  &.active {
+    display: block;
+  }
+  .popup {
+    width: 100%;
+    max-width: 1296px;
+    height: 800px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    background-color: $white;
+    transform: translate(-50%, -50%);
+    padding: 8rem 10rem 7.6rem 11rem;
+    &.popup-upload {
+      padding: 0;
+      .popup-content_upload {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        .popup-upload_title {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          border-bottom: 1px solid #ccc;
+          padding: 2.5rem 4rem;
+          font-size: 1.8rem;
+          color: $blackLight;
+          button {
+            border: none;
+            outline: none;
+            background-color: transparent;
+            font-size: 2.6rem;
+            cursor: pointer;
+          }
+        }
+        .popup-upload_main {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          .popup-upload_icon {
+            width: 140px;
+            height: 140px;
+            padding: 42px 52px;
+            background-color: #eee;
+            border-radius: 50%;
+            margin-bottom: 2.7rem;
+            i {
+              font-size: 6.5rem;
+              color: $gray;
+              border-bottom: 6px solid $gray;
+            }
+            &.active {
+              background-color: $green;
+              i {
+                color: $white;
+              }
+            }
+          }
+          .popup-upload_text {
+            margin-bottom: 3rem;
+            p {
+              text-align: center;
+              color: $blackLight;
+              margin: 0;
+            }
+            p:first-of-type {
+              font-size: 2.2rem;
+              font-weight: $extraBold;
+              margin-bottom: 1.6rem;
+            }
+            p:nth-child(2) {
+              line-height: 1.63;
+              letter-spacing: 0.34px;
+            }
+          }
+          .popup-upload_form {
+            margin-bottom: 3rem;
+            input[type="file"] {
+              display: none;
+            }
+            .popup-upload_btn {
+              padding: 10px 31px 10px 32px;
+              border-radius: 4px;
+              background-color: $green;
+              font-size: 1.4rem;
+              font-weight: $semiBold;
+              line-height: 1.43;
+              letter-spacing: 0.3px;
+              text-align: center;
+              color: $white;
+            }
+          }
+          .popup-upload-warning {
+            font-size: 1.4rem;
+            line-height: 1.43;
+            color: $grayDark;
+            i {
+              color: #cf2d2d;
+              font-size: 1.8rem;
+            }
+            display: none;
+            &.active {
+              display: block;
+            }
+          }
+        }
+        .popup-upload-terms {
+          margin-bottom: 5.2rem;
+          p {
+            text-align: center;
+            font-size: 1.4rem;
+            line-height: 1.43;
+            color: $grayDark;
+            margin: 0;
+            &:first-of-type {
+              margin-bottom: 0.6rem;
+            }
+          }
+        }
+      }
+    }
+    &.popup-uploading {
+      padding: 0;
+      height: 100%;
+      .popup-content_uploading {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        .popup-uploading_title {
+          padding: 2.5rem 4rem;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          font-size: 1.8rem;
+          color: $blackLight;
+          border-bottom: 1px solid $grayLight;
+          margin-bottom: 4.2rem;
+          button {
+            background-color: transparent;
+            outline: none;
+            border: none;
+          }
+        }
+        .popup-uploading_main {
+          display: flex;
+          flex: 1;
+          .popup-uploading_form {
+            flex: 1;
+            @include grid(2, 13.4rem);
+            row-gap: 0rem;
+            .form-side {
+              margin-left: 4rem;
+              fieldset {
+                border: none;
+                margin-bottom: 3rem;
+                padding: 0;
+                legend {
+                  font-weight: $bold;
+                  line-height: 1.25;
+                  color: $blackLight;
+                  margin-bottom: 0.8rem;
+                }
+                input,
+                textarea {
+                  background: $grayLightest;
+                  border: none;
+                  border-radius: 0.4rem;
+                  padding: 10px 13px;
+                }
+                input {
+                  width: 100%;
+                }
+                textarea {
+                  width: 596px;
+                  height: 140px;
+                }
+                select {
+                  padding: 10px 13px;
+                  color: $gray;
+                  border-radius: 4px;
+                  border: solid 1px #ccc;
+                  option {
+                    font-size: 1.4rem;
+                    line-height: 1.43;
+                    letter-spacing: 0.3px;
+                  }
+                }
+                .tag-input {
+                  display: flex;
+                  flex-direction: row;
+                  border: none;
+                  padding: 2px;
+                  &:focus-within {
+                    color: red;
+                  }
+                  input {
+                    flex-grow: 2;
+                    border: none;
+                    border-radius: 0;
+                    &:focus {
+                      outline: none;
+                    }
+                  }
+                  button {
+                    padding: 10px 15px 10px 14px;
+                    background-color: #eeeeef;
+                    border: none;
+                    outline: none;
+                    margin-left: -0.1rem;
+                  }
+                }
+              }
+            }
+            .media-side {
+              .media-side_section1 {
+                margin-bottom: 3.1rem;
+                .media-side_title {
+                  font-weight: $bold;
+                  line-height: 1.25;
+                  color: $blackLight;
+                  text-align: left;
+                  margin-bottom: 0.8rem;
+                }
+                .media-side_vruploaded {
+                  width: 416px;
+                  height: 234px;
+                  margin-bottom: 2.2rem;
+                }
+                .media-side_filename {
+                  line-height: 1.63;
+                  letter-spacing: 0.34px;
+                  color: $blackLight;
+                }
+              }
+              .media-side_section2 {
+                display: grid;
+                h3 {
+                  grid-column: 1/3;
+                  text-align: left;
+                  font-weight: $bold;
+                  line-height: 1.25;
+                  color: $blackLight;
+                  margin-bottom: 0.8rem;
+                }
+                .thumbnailArea {
+                  display: none;
+                  width: 196px;
+                  height: 110px;
+                  img {
+                    height: 100%;
+                    width: 100%;
+                  }
+                  &.active {
+                    display: inline-block;
+                  }
+                }
+                input {
+                  display: none;
+                }
+                label {
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: center;
+                  align-items: center;
+                  gap: 0.7rem;
+                  width: 196px;
+                  height: 110px;
+                  //   padding: 32px 43px 33px 44px;
+                  background-color: $grayLightest;
+                  font-size: 1.4rem;
+                  line-height: 1.43;
+                  text-align: center;
+                  color: $gray;
+                }
+              }
+            }
+            .popup-uploading-submit {
+              grid-column: 1 / 3;
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              padding: 2.4rem 4rem;
+              height: 7rem;
+              border-top: 1px solid $grayLight;
+              p {
+                font-size: 1.4rem;
+                text-align: center;
+                color: $gray;
+                text-decoration: underline;
+              }
+              .popup-uploading_buttons {
+                input {
+                  border-radius: 4px;
+                  font-size: 1.4rem;
+                  line-height: 1.43;
+                  letter-spacing: 0.3px;
+                }
+                input[type="submit"] {
+                  padding: 10px 20.5px 10px 21.5px;
+                  background-color: $green;
+                  font-weight: $semiBold;
+                  text-align: center;
+                  color: #fff;
+                  border: none;
+                }
+                input[type="reset"] {
+                  padding: 10px 17px 10px 18px;
+                  border-radius: 0.4rem;
+                  border: solid 1px $grayLight;
+                  color: $grayDark;
+                  background-color: transparent;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+    &.active {
+      opacity: 1;
+      visibility: visible;
+      display: block;
+    }
+    .popup-content {
+      .popup-username {
+        font-size: 4.4rem;
+        font-weight: $extraBold;
+        color: $blackLight;
+        margin-bottom: 1.8rem;
+      }
+      .popup-text {
+        margin-bottom: 5rem;
+        p.first-text,
+        p.second-text {
+          line-height: 1.63;
+          letter-spacing: 0.34px;
+          color: $blackLight;
+          a {
+            color: #767676;
+          }
+        }
+        p.second-text {
+          span {
+            font-weight: $bold;
+          }
+        }
+      }
+      .popup-imgconditions {
+        display: flex;
+        gap: 3rem;
+        margin-bottom: 3.5rem;
+        .popup-imgconditions_img {
+          width: 416px;
+          height: 278px;
+        }
+        .popup-imgconditions_conditions {
+          .condition {
+            margin-bottom: 2rem;
+            font-size: 2.2rem;
+            font-weight: $extraBold;
+            color: $blackLight;
+            p {
+              margin: 0;
+              line-height: 1.63;
+              letter-spacing: 0.34px;
+              font-size: 1.6rem;
+              font-weight: $regular;
+              color: $blackLight;
+              span {
+                font-weight: $bold;
+              }
+              a {
+                color: $blackLight;
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+      }
+      .popup-footer {
+        display: flex;
+        justify-content: flex-end;
+        .popup-footer_form {
+          display: flex;
+          justify-self: flex-end;
+          align-items: center;
+          label {
+            margin-right: 2rem;
+            display: flex;
+            align-items: center;
+            font-size: 1.4rem;
+            line-height: 1.43;
+            letter-spacing: normal;
+            color: $grayDark;
+            input {
+              margin-right: 1rem;
+            }
+          }
+          input {
+            border: none;
+            padding: 1rem 1.65rem 1rem 1.75rem;
+            border-radius: 4px;
+            background-color: $green;
+            color: $white;
+            font-size: 1.4rem;
+            font-weight: $semiBold;
+            line-height: 1.43;
+            letter-spacing: 0.3px;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}

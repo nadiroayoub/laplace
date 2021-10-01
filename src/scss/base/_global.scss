@@ -11,6 +11,10 @@ html {
 body {
   font-family: $principal_font;
   font-size: 1.6rem;
+  &.no-scroll {
+    position: fixed;
+    overflow: hidden;
+  }
 }
 p {
   color: $black;
@@ -38,20 +42,11 @@ h3 {
   color: $blackLight;
   text-align: center;
 }
-
-// h1 {
-//   font-size: 4rem;
-// }
-// h2 {
-//   font-size: 3.6rem;
-// }
-// h3 {
-//   font-size: 3rem;
-//   text-align: center;
-// }
-
 ul {
   list-style: none;
   margin-bottom: 0;
   padding: 0;
+}
+input:hover {
+  cursor: pointer;
 }

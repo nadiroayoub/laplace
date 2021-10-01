@@ -15,6 +15,21 @@
 @import "layout/home-page/header";
 @import "layout/home-page/main";
 @import "layout/home-page/footer";
+@import "layout/home-page/submitvr-popup";
 
 /**ARCHITECTURE PAGE*/
 @import "layout/architecture";
+
+/** SEARCH RESULT PAGE*/
+@import "layout/search_result";
+
+/*VR DETAILS PAGE*/
+@import "layout/vr_details";
+
+/*USER PAGE*/
+@import "layout/userpage/userpage";
+@import "layout/userpage/userpage-collections";
+@import "layout/userpage/userpage-collections-details";
+
+/*ABOUT PAGE*/
+@import "layout/about";

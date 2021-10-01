@@ -1,41 +1,62 @@
-.content{
-    justify-content: normal;
-    .auth-content{
-        @include desktop(){
-            margin-top: 11.1rem;
-        }
-        .auth-connections{
-            p{
-                a{
-                    margin-left: 1.6rem;
-                    text-decoration: underline;
-                }
-            }
-        }
-        .signin-form{
-            .form-field-group{
-                @include desktop(){
-                    flex-direction: column;
-                    .form-field{
-                        margin-left: 0;
-                        width: 100%;
-                        .label-justify{
-                            display: flex;
-                            justify-content: space-between;
-                            span{
-                                a{
-                                    color: $grayDark;
-                                    font-size: 1.4rem;
-                                }
-                            }
-                        }
-                        &:last-child{
-                            margin-bottom: 4rem;
-                        }
-                    }
-                }
-            }
-        }
-
+.content {
+  justify-content: normal;
+  .auth-content {
+    @include desktop() {
+      margin-top: 11.1rem;
     }
+    .auth-connections {
+      p {
+        a {
+          margin-left: 1.6rem;
+          text-decoration: underline;
+        }
+      }
+    }
+    .signin-form {
+      .form-field-group {
+        @include desktop() {
+          flex-direction: column;
+          .form-field {
+            margin-left: 0;
+            width: 100%;
+            .label-justify {
+              display: flex;
+              justify-content: space-between;
+              span {
+                a {
+                  color: $grayDark;
+                  font-size: 1.4rem;
+                  &:visited {
+                    color: $grayDark;
+                  }
+                }
+              }
+            }
+            &:last-child {
+              margin-bottom: 4rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.main-container_signin {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 1.2rem;
+  @include desktop() {
+    padding: 0;
+  }
+  .auth-sidebar {
+    margin-bottom: 0;
+  }
+  .content {
+    margin-top: 2rem;
+  }
+  @include desktop() {
+    flex-direction: row;
+  }
 }

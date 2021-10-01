@@ -1,0 +1,35 @@
+.about-container {
+    margin-top: 3rem;
+}
+.about-image {
+  margin-bottom: 4.4rem;
+}
+.about-text {
+  h1 {
+    font-size: 4.4rem;
+    font-weight: $extraBold;
+    color: $blackLight;
+    text-align: left;
+    margin-bottom: 3rem;
+  }
+  .text {
+    margin-bottom: 3.8rem;
+    h2 {
+      font-size: 2.2rem;
+      font-weight: $semiBold;
+      color: $blackLight;
+      margin-bottom: 0.6rem;
+      text-align: left;
+    }
+    .text-lead {
+      line-height: 1.5;
+      color: $blackLight;
+      text-align: left;
+      a {
+        font-weight: $bold;
+        color: $blackLight;
+        text-decoration: underline;
+      }
+    }
+  }
+}

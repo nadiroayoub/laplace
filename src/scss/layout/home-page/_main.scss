@@ -2,10 +2,13 @@
 .main-container {
   display: block;
   margin-top: 1.7rem;
+  padding: 0;
+  @include desktop() {
+  }
   .hero-image {
     height: 73rem;
     background-image: url("/build/img/index/josefina-di-battista-l-qn-914-a-bq-wq-unsplash.png");
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     padding: 0;
     color: $white; // modify it after
@@ -50,8 +53,11 @@
       .section2 {
         margin-bottom: 7.6rem;
         h1 {
+          font-size: 3.6rem;
+          @include tablet() {
+            font-size: 5.6rem;
+          }
           font-family: $secondary_font;
-          font-size: 5.6rem;
           font-weight: $extraBold;
           text-align: center;
           color: #fff;
@@ -65,11 +71,16 @@
         margin: 0 auto;
         position: relative;
         form {
-          width: 856px;
+          display: none;
+          @include tablet() {
+            display: flex;
+          }
+          @include desktop() {
+            width: 856px;
+          }
           height: 54px;
           background-color: $white;
           position: relative;
-          display: flex;
           align-items: center;
           border-radius: 0.4rem;
           .button-search {
@@ -167,7 +178,7 @@
           }
           opacity: 0;
           visibility: hidden;
-          &.active{
+          &.active {
             opacity: 1;
             visibility: visible;
           }
@@ -208,12 +219,30 @@
     margin-bottom: 3rem;
   }
   .container-home {
+    max-width: 129.6rem;
+    margin: 0 auto;
+    padding: 0 1.2rem;
+    @include desktop() {
+      padding: 0 1.2rem;
+    }
     .filter {
       margin-bottom: 3rem;
       .form-home {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        flex-direction: column;
+        gap: 1rem;
+        @include tablet() {
+          flex-direction: row;
+        }
+        .section1,
+        .section2 {
+          align-self: flex-start;
+          @include tablet() {
+            align-self: none;
+          }
+        }
         .form-field {
           display: inline-block;
           fieldset {
@@ -269,7 +298,13 @@
       }
     }
     .media-elements {
-      @include grid(3, 2.4rem);
+      @include grid(1, 2.4rem);
+      @include tablet() {
+        @include grid(2, 2.4rem);
+      }
+      @include desktop() {
+        @include grid(3, 2.4rem);
+      }
       .media-element {
         .thumbnail {
           position: relative;

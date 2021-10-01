@@ -1,0 +1,151 @@
+.related-results {
+  display: flex;
+  flex-wrap: wrap;
+  @include mobile() {
+    flex-wrap: nowrap;
+  }
+  span {
+    font-size: 1.8rem;
+    letter-spacing: 0.39px;
+    font-weight: $bold;
+  }
+  li {
+    margin-left: 2rem;
+    a {
+      color: #00dabb;
+    }
+  }
+}
+
+.navigation-search {
+  width: 100%;
+  box-shadow: 0 2px 0px 0 #e2e2e2;
+  .div-separator {
+    align-self: flex-start;
+  }
+  .menu-item {
+    a {
+      display: flex;
+      flex-direction: row;
+      display: flex;
+      align-items: center;
+      .icono {
+        margin-right: 0.9rem;
+      }
+      .text {
+        span {
+          margin-right: 0.5rem;
+          &.active {
+            font-weight: $bold;
+            color: $blackLight;
+          }
+        }
+      }
+    }
+  }
+}
+
+.search-container {
+  .introduction {
+    margin-bottom: 6.3rem;
+  }
+}
+
+.users {
+  @include grid(1, 2.4rem);
+  @include tablet() {
+    @include grid(2, 2.4rem);
+  }
+  @include desktop() {
+    @include grid(4, 2.4rem);
+  }
+  .user {
+    background-color: #f4f4f4;
+    padding: 3rem 1.5rem;
+    border-radius: 1rem;
+    .avatar {
+      margin: 0 auto 0.8rem auto;
+      width: 7.2rem;
+      img {
+        width: 100%;
+      }
+    }
+    .name {
+      font-size: 1.8rem;
+      font-weight: $bold;
+      text-align: center;
+      color: $blackLight;
+      margin-bottom: 0.2rem;
+    }
+    .username {
+      text-align: center;
+      color: $grayDark;
+      margin-bottom: 1rem;
+    }
+    .interests {
+      margin-bottom: 1rem;
+      p {
+        font-size: 1.2rem;
+        font-weight: $medium;
+        text-align: center;
+        color: #9e9ea7;
+        margin: 0;
+      }
+    }
+    .follow {
+      text-align: center;
+      button {
+        padding: 0.7rem 1.2rem 0.7rem 1.3rem;
+        border-radius: 1rem;
+        background-color: $white;
+        color: $blackLight;
+        border: none;
+        font-size: 1.4rem;
+        font-weight: $semiBold;
+        line-height: 1.43;
+        letter-spacing: 0.3px;
+      }
+    }
+  }
+}
+
+/* No search results*/
+.container-home_noresults {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .noresults-icon {
+    width: auto;
+    height: auto;
+    padding-bottom: 5.5rem;
+    i {
+      font-size: 15.8rem;
+      color: $gray;
+    }
+  }
+  .noresults-title {
+    margin-bottom: 0.7rem;
+    font-size: 2.2rem;
+    font-weight: $bold;
+    text-align: center;
+    color: $blackLight;
+  }
+  .noresults-paragraph {
+    margin: 3.9rem;
+    line-height: 1.5;
+    text-align: center;
+    font-weight: $regular;
+    color: $blackLight;
+  }
+  .footer {
+    margin: 0;
+    a {
+    }
+  }
+}
+.flex-wrapper {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
+}

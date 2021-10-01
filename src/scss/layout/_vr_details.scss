@@ -1,0 +1,284 @@
+.vr-details-container {
+  padding: 0;
+  .vr {
+    width: 100%;
+    background-color: $black;
+    margin-bottom: 1.9rem;
+    .vr-container {
+      .video {
+        position: relative;
+        max-width: 1296px;
+        max-height: 730px;
+        width: 100%;
+        height: 100%;
+        display: block;
+        margin: 0 auto;
+        video {
+          width: 100%;
+          height: 100%;
+        }
+        video:focus {
+          outline: none;
+        }
+        .vr-containers_actions {
+          position: absolute;
+          top: 4rem;
+          right: 0rem;
+          @include desktop() {
+            right: -6.1rem;
+          }
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          .avatar {
+            width: 40px;
+            height: 40px;
+          }
+          .like,
+          .share,
+          .collection {
+            position: relative;
+            width: 4rem;
+            height: 4rem;
+            margin-top: 1.6rem;
+            padding: 1rem;
+            border-radius: 0.8rem;
+            background-color: $blackLight;
+            &:hover {
+              background-color: $green;
+              cursor: pointer;
+              &::before {
+                content: "Like";
+                top: 0;
+                right: 150%;
+                width: fit-content;
+                height: 4rem;
+                padding: 0 1.6rem;
+                position: absolute;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: $white;
+                background-color: #00dabb;
+                border-radius: 8px;
+                font-size: 1.4rem;
+                font-weight: $semiBold;
+                line-height: 1.43;
+                letter-spacing: 0.3px;
+              }
+            }
+            svg {
+              path {
+                fill: $white;
+              }
+            }
+          }
+          .share {
+            &:hover {
+              &::before {
+                content: "Share";
+              }
+            }
+          }
+          .collection {
+            &:hover {
+              &::before {
+                content: "Collection";
+              }
+            }
+          }
+        }
+      }
+      .controls {
+        display: flex;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        flex-wrap: wrap;
+        background-color: $gray;
+        .buttons {
+          button {
+            background-color: none;
+            outline: none;
+            border: none;
+            cursor: pointer;
+          }
+          &:before {
+            content: "\f144";
+            font-family: "Font Awesome 5 Free";
+            width: 3rem;
+            height: 3rem;
+            display: inline-block;
+            font-size: 2.8rem;
+            color: $white;
+            -webkit-font-smoothing: antialiased;
+          }
+        }
+      }
+    }
+  }
+  .vr-informations {
+    .title-actions {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      @include mobile() {
+        flex-wrap: nowrap;
+      }
+      .title {
+        font-size: 1.8rem;
+        font-weight: $semiBold;
+        color: $grayDark;
+      }
+      .lista-actions {
+        display: flex;
+        align-items: center;
+        li {
+          margin-right: 0.8rem;
+          a {
+            display: flex;
+            align-items: center;
+            padding: 0.7rem 1.25rem 0.7rem 0.7rem;
+            border-radius: 1rem;
+            border: solid 1px #ccc;
+            background-color: $white;
+            span {
+              font-size: 1.4rem;
+              font-weight: $semiBold;
+              text-align: center;
+              color: #171717;
+            }
+            i {
+              color: red;
+            }
+          }
+          &:last-of-type {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+    .views {
+      display: flex;
+      align-items: center;
+      margin-bottom: 2rem;
+      span {
+        font-size: 14px;
+        color: $gray;
+        &.views-text {
+          margin-right: 0.5rem;
+        }
+        &.views-number {
+          margin-right: 0.9rem;
+          color: $blackLight;
+          font-weight: $bold;
+        }
+        &.views-date {
+          margin-left: 0.8rem;
+        }
+      }
+    }
+    .location-details {
+      display: flex;
+      align-items: center;
+      color: $gray;
+      margin-bottom: 5.2rem;
+      .location-details_icon {
+        margin-right: 0.4rem;
+      }
+      .location-details_city {
+        display: flex;
+        align-items: center;
+        font-size: 1.4rem;
+        margin-right: 2.9rem;
+      }
+      .location-details_date {
+        align-items: center;
+        display: flex;
+      }
+    }
+  }
+  .user {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 6rem;
+    .user-details {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      .avatar {
+        width: 4.4rem;
+        display: flex;
+      }
+      .username {
+        font-size: 1.4rem;
+        font-weight: $bold;
+        color: $grayDark;
+      }
+      .follow-button {
+        button {
+          padding: 0.7rem 1.2rem 0.7rem 1.3rem;
+          border-radius: 1rem;
+          border: solid 1px #ccc;
+          background-color: $white;
+          font-size: 1.4rem;
+          font-weight: 600;
+          text-align: center;
+          color: #171717;
+        }
+      }
+    }
+    .vr-description {
+      margin-left: 5.4rem;
+      p {
+        font-size: 1.4rem;
+        color: $grayDark;
+        line-height: 2.4rem;
+        margin: 0;
+        margin-top: 0.6rem;
+      }
+    }
+  }
+  .related-tags {
+    margin-bottom: 6.8rem;
+    .related-tags_title {
+      text-align: left;
+      margin-bottom: 3rem;
+      font-size: 1.8rem;
+      font-weight: $semiBold;
+      color: #1f2125;
+    }
+    .related-tags_list {
+      display: flex;
+      flex-wrap: wrap;
+      @include tablet() {
+        flex-wrap: nowrap;
+      }
+      li {
+        margin-right: 1rem;
+        a {
+          padding: 0.3rem 1.2rem 0.3rem 1.1rem;
+          border-radius: 0.4rem;
+          border: solid 1px #e7e7e7;
+          background-color: #f1f1f1;
+          font-size: 1.4rem;
+          font-weight: $medium;
+          line-height: 1.43;
+          text-align: center;
+          color: $gray;
+        }
+      }
+    }
+  }
+  .related-photos {
+    margin-bottom: 7.4rem;
+    .related-photos_title {
+      text-align: left;
+      margin-bottom: 3.2rem;
+      font-size: 1.8rem;
+      font-weight: $semiBold;
+      color: #1f2125;
+    }
+  }
+}

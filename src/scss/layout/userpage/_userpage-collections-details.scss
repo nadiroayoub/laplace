@@ -1,0 +1,55 @@
+.container-collections_details {
+  .collection-title {
+    font-size: 4.4rem;
+    font-weight: $extraBold;
+    color: $blackLight;
+    text-align: left;
+    margin-bottom: 2rem;
+  }
+  .collection-section2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6.9rem;
+    .collection-user {
+      display: inline-flex;
+      align-items: center;
+      .collection-user_icon {
+        width: 4.4rem;
+        margin-right: 1.6rem;
+      }
+      .collection-user_name {
+        margin-right: 0.9rem;
+        font-size: 2.2rem;
+        font-weight: $semiBold;
+        line-height: 0.91;
+        letter-spacing: normal;
+        color: #3b3f44;
+      }
+      .collection-user_vricon {
+        margin-left: 0.9rem;
+        margin-right: 0.8rem;
+      }
+      .collection-user_vrinumber {
+        line-height: 1.25;
+        color: $grayDark;
+      }
+    }
+    .collection-buttons {
+      display: flex;
+      gap: 0.8rem;
+      a {
+        padding: 0.7rem 1.5rem 0.7rem 1rem;
+        border-radius: 1rem;
+        border: solid 1px #ccc;
+        background-color: $white;
+        display: flex;
+        justify-content: center;
+        gap: 0.2rem;
+      }
+      .collection-buttons_edit {
+        // display: flex;
+      }
+    }
+  }
+}

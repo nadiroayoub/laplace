@@ -22,15 +22,15 @@
         }
         .vr-containers_actions {
           position: absolute;
-          top: 4rem;
-          right: 0rem;
-          @include desktop() {
-            right: -6.1rem;
-          }
           display: flex;
           flex-direction: column;
           justify-content: center;
           align-items: center;
+          top: 0rem;
+          right: 3rem;
+          @include mobile() {
+            top: 4rem;
+          }
           .avatar {
             width: 40px;
             height: 40px;

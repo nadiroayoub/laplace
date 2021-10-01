@@ -43,6 +43,9 @@ window.addEventListener("DOMContentLoaded", function (event) {
   const scrolledNavigationMenu = document.querySelector(".div-navigation");
   const btnScrollRight = document.querySelector(".fas.fa-chevron-right");
   const btnScrollLeft = document.querySelector(".fas.fa-chevron-left");
+  // Mobile menu variables
+  const mobileMenuBtn = document.querySelector("#mobile-menu_btn");
+  const mobileMenuContent = document.querySelector(".mobile-menu_content");
   // File uploaded by the user
   let file;
   let fileThumbnail;
@@ -121,6 +124,13 @@ window.addEventListener("DOMContentLoaded", function (event) {
       dropdownMenuSearch.classList.add("active");
     });
   }
+
+  /**
+   * Mobile menu
+   */
+  mobileMenuBtn.addEventListener("click", () => {
+    mobileMenuContent.classList.toggle("active");
+  });
   /**
    * Hide when clicking outsite dropdown menu
    */

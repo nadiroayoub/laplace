@@ -22,7 +22,7 @@ window.addEventListener("DOMContentLoaded", function (event) {
   /**
    * HOME PAGE VARIABLES
    */
-  const btnSubmitVr = document.querySelector("#btn-submit_vr");
+  const btnSubmitVr = document.querySelectorAll(".btn-submit_vr");
   // Close button of home popup
   const homePopupClosebtn = document.querySelectorAll(".home-popup_closebtn");
   // Home popup container
@@ -46,6 +46,12 @@ window.addEventListener("DOMContentLoaded", function (event) {
   // Mobile menu variables
   const mobileMenuBtn = document.querySelector("#mobile-menu_btn");
   const mobileMenuContent = document.querySelector(".mobile-menu_content");
+  const contentLaplaceLegend = document.querySelectorAll(
+    ".content-laplace_legend"
+  );
+  const contentLaplaceSubmenu = document.querySelectorAll(
+    ".content-laplace_submenu"
+  );
   // File uploaded by the user
   let file;
   let fileThumbnail;
@@ -130,6 +136,19 @@ window.addEventListener("DOMContentLoaded", function (event) {
    */
   mobileMenuBtn.addEventListener("click", () => {
     mobileMenuContent.classList.toggle("active");
+  });
+
+  // Show Laplace & Legal submenu
+  contentLaplaceLegend.forEach((title) => {
+    title.addEventListener("click", (e) => {
+      if (contentLaplaceLegend[0] == title) {
+        contentLaplaceSubmenu[0].classList.toggle("active");
+        document.querySelectorAll(".triangle")[0].classList.toggle("flipped");
+      } else {
+        contentLaplaceSubmenu[1].classList.toggle("active");
+        document.querySelectorAll(".triangle")[1].classList.toggle("flipped");
+      }
+    });
   });
   /**
    * Hide when clicking outsite dropdown menu
@@ -244,11 +263,13 @@ window.addEventListener("DOMContentLoaded", function (event) {
    * Desactivate body scrolling when clicking on submit a vr button
    */
   if (btnSubmitVr) {
-    btnSubmitVr.addEventListener("click", () => {
-      document.body.classList.add("no-scroll");
-      popup[0].classList.add("active");
-      popupContainer.classList.add("active");
-    });
+    btnSubmitVr.forEach(btn =>{
+      btn.addEventListener("click", () => {
+        document.body.classList.add("no-scroll");
+        popup[0].classList.add("active");
+        popupContainer.classList.add("active");
+      });
+    })
   }
 
   /***********************  SEARCH PAGE SCRIPTS ***********************/

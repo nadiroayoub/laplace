@@ -186,6 +186,7 @@
         p {
           font-size: 1.5rem;
           margin: 2.5rem 0 0 4.6rem;
+          color: $white;
           span {
             color: #aaa;
           }
@@ -201,14 +202,13 @@
         p {
           margin: 0;
           font-size: 1.4rem;
-          text-align: center;
+          text-align: left;
           color: $white;
-          flex-basis: 50%;
-          display: flex;
-          margin-left: 3rem;
-          &:last-child {
-            margin: 0;
+          flex-basis: auto;
+          @include mobile() {
+            flex-basis: 50%;
           }
+          margin-left: 3rem;
           span {
             color: $gray;
             font-weight: 400;

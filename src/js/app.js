@@ -59,6 +59,26 @@ window.addEventListener("DOMContentLoaded", function (event) {
   let fileVideo;
 
   /**
+   * Change placeholder navigation content when is more then 750px
+   */
+  var media = "screen and (min-width: 720px)",
+    placeholderShort = "Search videos",
+    placeholderLong = "Search high-resolution 360° videos";
+  var changeSearchInputContent = function (event) {
+    if (window.matchMedia(media).matches) {
+      document
+        .querySelector(".search-input")
+        .setAttribute("placeholder", placeholderLong);
+      console.log("matches");
+    } else {
+      document
+        .querySelector(".search-input")
+        .setAttribute("placeholder", placeholderShort);
+    }
+  };
+  window.addEventListener("resize", changeSearchInputContent, true);
+  window.addEventListener("load", changeSearchInputContent, true);
+  /**
    *
    * Test select countries
    */
@@ -391,8 +411,8 @@ window.addEventListener("DOMContentLoaded", function (event) {
   if (btnSubmitVr) {
     btnSubmitVr.forEach((btn) => {
       btn.addEventListener("click", () => {
-        document.body.classList.add("no-scroll");
         popup[0].classList.add("active");
+        document.body.classList.add("no-scroll");
         popupContainer.classList.add("active");
       });
     });

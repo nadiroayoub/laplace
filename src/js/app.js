@@ -62,18 +62,128 @@ window.addEventListener("DOMContentLoaded", function (event) {
    *
    * Test select countries
    */
-  fetch(
-    "https://raw.githubusercontent.com/David-Haim-zz/CountriesToCitiesJSON/master/countriesToCities.json"
-  )
-    .then((res) => {
-      return res.json();
-    })
-    .then((data) => {
-      console.log(data);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+
+  // Load countries
+  function loadCountries() {
+    fetch("https://restcountries.com/v2/all")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        data.forEach((country) => {
+          if (country.region == "Asia") {
+            document.querySelector(
+              "#country"
+            ).innerHTML += `<option value="${country.name}">${country.name}</option>`;
+          }
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+  loadCountries();
+
+  document.querySelector("#continent").addEventListener("change", (e) => {
+    document.querySelector("#country").innerHTML = "";
+    fetch("https://restcountries.com/v2/all")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        switch (document.querySelector("#continent").value) {
+          case "asia":
+            data.forEach((country) => {
+              if (country.region == "Asia") {
+                insertCountries(country);
+              }
+            });
+            break;
+          case "africa":
+            data.forEach((country) => {
+              if (country.region == "Africa") {
+                insertCountries(country);
+              }
+            });
+            break;
+          case "europe":
+            data.forEach((country) => {
+              if (country.region == "Europe") {
+                insertCountries(country);
+              }
+            });
+            break;
+          case "americas":
+            data.forEach((country) => {
+              if (country.region == "Americas") {
+                insertCountries(country);
+              }
+            });
+            break;
+          case "oceania":
+            data.forEach((country) => {
+              if (country.region == "Oceania") {
+                insertCountries(country);
+              }
+            });
+            break;
+          case "antarctica":
+            data.forEach((country) => {
+              if (country.region == "Polar") {
+                insertCountries(country);
+              }
+            });
+            break;
+          default:
+            break;
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  });
+
+  // insert countries in select option function
+  function insertCountries(country) {
+    document.querySelector(
+      "#country"
+    ).innerHTML += `<option value="${country.name}">${country.name}</option>`;
+  }
+  // Load Date
+  function loadDate() {
+    var nowYear = new Date().getFullYear();
+    var options;
+    for (var y = nowYear; y >= 1970; y--) {
+      options += `<option value=${y}> ${y} </option>`;
+    }
+    console.log(nowYear);
+    document.querySelector("#year").innerHTML = options;
+  }
+  loadDate();
+
+  // Load Mounth
+  const monthNames = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+  function loadMonth() {
+    var options;
+    for (var i = 0; i < monthNames.length; i++) {
+      options += `<option value=${monthNames[i]}> ${monthNames[i]} </option>`;
+    }
+    document.querySelector("#month").innerHTML = options;
+  }
+  loadMonth();
   /**
    * Horizontal menu of home page
    */

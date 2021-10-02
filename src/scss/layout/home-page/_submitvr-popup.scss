@@ -337,7 +337,7 @@
     }
     opacity: 0;
     visibility: hidden;
-    display: none;
+    display: none; // problem for the mobile is here
     &.active {
       opacity: 1;
       visibility: visible;

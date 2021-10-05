@@ -458,9 +458,27 @@ window.addEventListener("DOMContentLoaded", function (event) {
   /**
    *  ******************************************** USER PAGE *****************************************************
    */
-  //Variables
-
+  /*******Variables *********/
   const uspage = document.getElementById("uspage");
+
+  // Activate contents depends to submenu
+  const horizontalSidenavElement = document.querySelectorAll(
+    ".horizontal-sidenav li a"
+  );
+  const uspageMain = document.querySelectorAll(".container-home_uspage");
+
+  // Activate sub menu element when is clicked
+  horizontalSidenavElement.forEach((li, index) => {
+    if (horizontalSidenavElement) {
+      li.addEventListener("click", function () {
+        removeActiveClass(horizontalSidenavElement);
+        removeActiveClass(uspageMain);
+        uspageMain[index].classList.add("active");
+        li.classList.add("active");
+      });
+    }
+  });
+  // Stats submenu content
   if (uspage) {
     var viewsChartElement = document
       .getElementById("views-chart")

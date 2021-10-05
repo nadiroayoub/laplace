@@ -317,4 +317,14 @@
       }
     }
   }
+  .container-home_uspage {
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+    &.active {
+      height: auto;
+      visibility: visible;
+      opacity: 1;
+    }
+  }
 }

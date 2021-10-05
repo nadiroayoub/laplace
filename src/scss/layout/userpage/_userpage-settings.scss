@@ -3,6 +3,14 @@
   .main {
     max-width: 636px;
     width: 100%;
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+    &.active {
+      display: block;
+      visibility: visible;
+      opacity: 1;
+    }
   }
   .main-container {
     position: relative;

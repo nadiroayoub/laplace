@@ -69,7 +69,6 @@ window.addEventListener("DOMContentLoaded", function (event) {
       document
         .querySelector(".search-input")
         .setAttribute("placeholder", placeholderLong);
-      console.log("matches");
     } else {
       document
         .querySelector(".search-input")
@@ -182,7 +181,6 @@ window.addEventListener("DOMContentLoaded", function (event) {
     for (var y = nowYear; y >= 1970; y--) {
       options += `<option value=${y}> ${y} </option>`;
     }
-    console.log(nowYear);
     if (document.querySelector("#year")) {
       document.querySelector("#year").innerHTML = options;
     }
@@ -432,7 +430,7 @@ window.addEventListener("DOMContentLoaded", function (event) {
     });
   }
 
-  /***********************  SEARCH PAGE SCRIPTS ***********************/
+  /***********************  SEARCH PAGE ***********************/
   // Posibilites contents
   const searchContainerVr = document.querySelector(".search-container_vr");
   const searchContainerUsers = document.querySelector(
@@ -461,92 +459,124 @@ window.addEventListener("DOMContentLoaded", function (event) {
    *  ******************************************** USER PAGE *****************************************************
    */
   //Variables
-  var viewsChartElement = document
-    .getElementById("views-chart")
-    .getContext("2d");
-  var likesChartElement = document
-    .getElementById("likes-chart")
-    .getContext("2d");
 
-  // Disable data in column and row
-  Chart.defaults.scale.ticks.display = false;
+  const uspage = document.getElementById("uspage");
+  if (uspage) {
+    var viewsChartElement = document
+      .getElementById("views-chart")
+      .getContext("2d");
+    var likesChartElement = document
+      .getElementById("likes-chart")
+      .getContext("2d");
 
-  // Enable Chart for views
-  let last30Days = [];
-  let dateNow;
-  let j;
-  for (let i = 0; i < 30; i++) {
-    if (new Date().getDate() - i <= 0) {
-      j = i - 30;
-      dateNow = new Date().getDate() - j;
-      last30Days.push(dateNow);
-    } else {
-      dateNow = new Date().getDate() - i;
-      last30Days.push(dateNow);
+    // Disable data in column and row
+    Chart.defaults.scale.ticks.display = false;
+
+    // Enable Chart for views
+    let last30Days = [];
+    let dateNow;
+    let j;
+    for (let i = 0; i < 30; i++) {
+      if (new Date().getDate() - i <= 0) {
+        j = i - 30;
+        dateNow = new Date().getDate() - j;
+        last30Days.push(dateNow);
+      } else {
+        dateNow = new Date().getDate() - i;
+        last30Days.push(dateNow);
+      }
     }
-  }
-  let viewsNumberData = [];
-  for (let i = 0; i < 30; i++) {
-    viewsNumberData.push(Math.random() * 1000);
-  }
+    let viewsNumberData = [];
+    for (let i = 0; i < 30; i++) {
+      viewsNumberData.push(Math.random() * 1000);
+    }
 
-  // Add data to views chart
-  let viewsChart = new Chart(viewsChartElement, {
-    type: "line",
-    data: {
-      labels: last30Days.reverse(),
-      datasets: [
-        {
-          label: "",
-          data: viewsNumberData,
-          tension: 0.5,
-          pointHoverBackgroundColor: "rgb(255, 255, 255)",
-          pointHoverBorderColor: "rgb(0, 218, 187)",
-          pointBackgroundColor: "rgba(255, 255 , 255, 0)",
-          pointBorderColor: "rgba(255, 255 , 255, 0)",
-          borderColor: "#171717",
-          hoverBorderColor: "rgb(0, 218, 187)",
-          borderWidth: 1.5,
-        },
-      ],
-    },
-    options: {
-      hover: { mode: "dataset", intersect: true },
-      plugins: {
-        legend: {
-          display: false,
+    // Add data to views chart
+    let viewsChart = new Chart(viewsChartElement, {
+      type: "line",
+      data: {
+        labels: last30Days.reverse(),
+        datasets: [
+          {
+            label: "",
+            data: viewsNumberData,
+            tension: 0.5,
+            pointHoverBackgroundColor: "rgb(255, 255, 255)",
+            pointHoverBorderColor: "rgb(0, 218, 187)",
+            pointBackgroundColor: "rgba(255, 255 , 255, 0)",
+            pointBorderColor: "rgba(255, 255 , 255, 0)",
+            borderColor: "#171717",
+            hoverBorderColor: "rgb(0, 218, 187)",
+            borderWidth: 1.5,
+          },
+        ],
+      },
+      options: {
+        hover: { mode: "dataset", intersect: true },
+        plugins: {
+          legend: {
+            display: false,
+          },
         },
       },
-    },
-  });
+    });
 
-  // Add data to likes chart
-  let likesChart = new Chart(likesChartElement, {
-    type: "line",
-    data: {
-      labels: last30Days.reverse(),
-      datasets: [
-        {
-          label: "",
-          data: viewsNumberData,
-          tension: 0.5,
-          pointHoverBackgroundColor: "rgb(255, 255, 255)",
-          pointHoverBorderColor: "rgb(0, 218, 187)",
-          pointBackgroundColor: "rgba(255, 255 , 255, 0)",
-          pointBorderColor: "rgba(255, 255 , 255, 0)",
-          borderColor: "#171717",
-          hoverBorderColor: "rgb(0, 218, 187)",
-          borderWidth: 1.5,
-        },
-      ],
-    },
-    options: {
-      hover: { mode: "dataset", intersect: true },
-      plugins: {
-        legend: {
-          display: false,
+    // Add data to likes chart
+    let likesChart = new Chart(likesChartElement, {
+      type: "line",
+      data: {
+        labels: last30Days.reverse(),
+        datasets: [
+          {
+            label: "",
+            data: viewsNumberData,
+            tension: 0.5,
+            pointHoverBackgroundColor: "rgb(255, 255, 255)",
+            pointHoverBorderColor: "rgb(0, 218, 187)",
+            pointBackgroundColor: "rgba(255, 255 , 255, 0)",
+            pointBorderColor: "rgba(255, 255 , 255, 0)",
+            borderColor: "#171717",
+            hoverBorderColor: "rgb(0, 218, 187)",
+            borderWidth: 1.5,
+          },
+        ],
+      },
+      options: {
+        hover: { mode: "dataset", intersect: true },
+        plugins: {
+          legend: {
+            display: false,
+          },
         },
       },
-    },
+    });
+  }
+
+  /**
+   * *************************************************USER PAGE SETTINGS**********************************************************
+   */
+  const verticalSidenavElement = document.querySelectorAll(
+    ".vertical-sidenav li"
+  );
+  const uspageSettings = document.getElementById("uspage-settings");
+  let uspageSettingsmain;
+  if (uspageSettings) {
+    uspageSettingsmain = document.querySelectorAll(".main");
+  }
+  // Activate sub menu element when is clicked
+  verticalSidenavElement.forEach((li, index) => {
+    if (verticalSidenavElement) {
+      li.addEventListener("click", function () {
+        removeActiveClass(verticalSidenavElement);
+        removeActiveClass(uspageSettingsmain);
+        uspageSettingsmain[index].classList.add("active");
+        li.classList.add("active");
+      });
+    }
   });
+  const removeActiveClass = function (elements) {
+    elements.forEach((element) => {
+      element.classList.remove("active");
+    });
+  };
 });

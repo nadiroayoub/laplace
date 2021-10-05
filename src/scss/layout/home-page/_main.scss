@@ -221,8 +221,10 @@
   .container-home {
     max-width: 129.6rem;
     margin: 0 auto;
-    padding: 0;
     padding: 0 1.2rem;
+    @include mobile() {
+      padding: 0;
+    }
     .filter {
       margin-bottom: 3rem;
       .form-home {

@@ -1,0 +1,30 @@
+#license-page {
+  .main-container_license {
+    .main-license {
+      .main-license_title {
+        margin-bottom: 4.6rem;
+      }
+      .license-text {
+        .license-text_heading {
+          margin-bottom: 0;
+        }
+        .license-text_paragraph,
+        .license-text_heading {
+          font-size: 1.6rem;
+          line-height: 1.5;
+          color: $blackLight;
+          font-weight: $regular;
+          margin-top: 0;
+          .word-wrap {
+            display: block;
+          }
+        }
+      }
+    }
+    .main-privacy {
+      .privacy-text_heading {
+        padding-bottom: 1.6rem;
+      }
+    }
+  }
+}

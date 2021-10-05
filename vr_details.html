@@ -89,7 +89,7 @@
         <div class="navigation-join">
           <div class="btn-submit">
             <button type="button">
-              <a href="#popup-container" id="btn-submit_vr"
+              <a href="#popup-container" class="btn-submit_vr"
                 >Submit<span> a VR</span></a
               >
             </button>
@@ -97,6 +97,70 @@
           <div class="btns-join">
             <a href="signin.html">Sign in</a>
             <a href="signup.html">Sign up</a>
+          </div>
+        </div>
+        <div class="mobile-menu">
+          <div class="mobile-menu_btn" id="mobile-menu_btn">
+            <i class="fas fa-bars"></i>
+          </div>
+          <div class="mobile-menu_content">
+            <div class="menu-content_laplace">
+              <div class="content-laplace_legend">
+                <img src="/build/img/index/laplace logo submenu.webp" alt="" />
+                Laplace
+                <svg
+                  class="triangle"
+                  width="10"
+                  height="10"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="m5.333 2.5 3.252 4.878A.4.4 0 0 1 8.253 8H1.747a.4.4 0 0 1-.332-.622L4.667 2.5a.4.4 0 0 1 .666 0z"
+                    fill="#CCC"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+              </div>
+              <ul class="content-laplace_submenu">
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact_us.html">Contact us</a></li>
+              </ul>
+            </div>
+            <div class="menu-content_legal">
+              <div class="content-laplace_legend">
+                <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M12.1 2c.22 0 .4.18.4.4v3.2c0 .22.18.4.4.4h3.2c.22 0 .4.18.4.4V17a1 1 0 0 1-1 1h-11a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h7.6zM14 14H6a.5.5 0 0 0-.09.992L6 15h8a.5.5 0 1 0 0-1zm0-3H6a.5.5 0 0 0-.09.992L6 12h8a.5.5 0 1 0 0-1zm-4-3H6a.5.5 0 0 0-.09.992L6 9h4a.5.5 0 1 0 0-1zm3.5-6 3 3h-3V2z"
+                    fill="#767676"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+                Legal
+                <svg
+                  class="triangle"
+                  width="10"
+                  height="10"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="m5.333 2.5 3.252 4.878A.4.4 0 0 1 8.253 8H1.747a.4.4 0 0 1-.332-.622L4.667 2.5a.4.4 0 0 1 .666 0z"
+                    fill="#CCC"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+              </div>
+              <ul class="content-laplace_submenu">
+                <li><a href="license.html">License</a></li>
+                <li><a href="privacy_policy.html">Privacy Policy</a></li>
+                <li><a href="terms.html">Terms</a></li>
+              </ul>
+            </div>
+            <div class="menu-content_btns">
+              <button type="button" class="btn-submit_vr submit-btn_mobile">
+                Submit a VR
+              </button>
+              <a href="signup.html" class="signup-btn_mobile">Sign up</a>
+            </div>
           </div>
         </div>
       </nav>
@@ -171,6 +235,247 @@
         <a href=""><span> View all </span></a>
       </div>
     </nav>
+    <div class="popup-container" id="popup-container">
+      <div class="popup">
+        <div class="popup-content">
+          <div class="popup-username">Hi Username 👋</div>
+          <div class="popup-text">
+            <p class="first-text">
+              Thanks for contributing to Laplace! You’re awesome. To save you
+              time and increase your chance of being featured, please ensure
+              that your photos meet our <a href="#">submission guidelines</a>.
+            </p>
+            <p class="second-text">
+              Note: Every photo on Laplace is published under the Laplace
+              License – which allows people to use photos
+              <span
+                >from Laplace for free, including for commercial purposes,
+                without attributing the photographer on Laplace.</span
+              >
+              <a href="#">Learn more</a>.
+            </p>
+          </div>
+          <div class="popup-imgconditions">
+            <img
+              src="/build/img/index/calle madrid.jpg"
+              alt=""
+              class="popup-imgconditions_img"
+            />
+            <div class="popup-imgconditions_conditions">
+              <div class="condition condition1">
+                01
+                <p class="conditions1-text">
+                  Only upload high quality photos. For a standard landscape
+                  orientation photo, <span>5 megapixels</span> is at least
+                  <span> 2500 by 2000 pixels </span>in size.
+                </p>
+              </div>
+              <div class="condition condition2">
+                02
+                <p class="conditions2-text">
+                  Photos are <span>clear, original</span> and are not over
+                  edited. Photos do not contain nudity or violent imagery.
+                  Unsplash is a place for people of all ages.
+                </p>
+              </div>
+              <div class="condition condition3">
+                03
+                <p class="conditions3-text">
+                  You must <span>own the rights</span> to any photo you share on
+                  Unsplash.You can read more about this in our
+                  <a href="#">Terms</a>.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="popup-footer">
+            <form class="popup-footer_form" action="">
+              <label
+                ><input
+                  type="checkbox"
+                  id="popup1-cbox1"
+                  value="I understand and agree"
+                />
+                I understand and agree</label
+              >
+              <input type="submit" value="Start uploading" id="submit-popup1" />
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="popup popup-upload">
+        <div class="popup-content popup-content_upload">
+          <header class="popup-upload_title">
+            Upload VR
+            <button type="button" class="home-popup_closebtn">x</button>
+          </header>
+          <div class="popup-upload_main" id="popup-upload_main">
+            <div class="popup-upload_icon">
+              <i class="fas fa-long-arrow-alt-up"></i>
+            </div>
+            <div class="popup-upload_text">
+              <p>Drag and drop VR files to upload</p>
+              <p>Your VR will be private until you publish them.</p>
+            </div>
+            <form class="popup-upload_form" action="">
+              <label
+                for="vr-file-upload"
+                class="popup-upload_btn"
+                id="popup-upload_btn"
+              >
+                Select files
+              </label>
+              <input id="vr-file-upload" type="file" />
+            </form>
+            <p class="popup-upload-warning">
+              <i class="fas fa-exclamation-triangle"></i>
+              Invalid file format. Learn more
+            </p>
+          </div>
+          <footer class="popup-upload-terms">
+            <p>
+              By submitting your VR contents to Laplace, you acknowledge that
+              you agree to Laplace’s Terms of Service.
+            </p>
+            <p>
+              Please be sure not to violate others' copyright or privacy rights.
+              Learn more
+            </p>
+          </footer>
+        </div>
+      </div>
+      <div class="popup popup-uploading">
+        <div class="popup-content popup-content_uploading">
+          <header class="popup-uploading_title">
+            Upload VR
+            <button type="button" class="home-popup_closebtn">x</button>
+          </header>
+          <div class="popup-uploading_main" id="popup-uploading_main">
+            <form action="" class="popup-uploading_form">
+              <div class="form-side">
+                <fieldset>
+                  <legend class="title">Title</legend>
+                  <input type="text" id="title" name="title" />
+                </fieldset>
+                <fieldset>
+                  <legend class="description">Description</legend>
+                  <textarea
+                    name="title"
+                    id="title"
+                    placeholder="8+ characters"
+                  ></textarea>
+                </fieldset>
+                <fieldset>
+                  <legend class="location">Location</legend>
+                  <input
+                    type="text"
+                    id="location"
+                    name="location"
+                    placeholder="VR location"
+                  />
+                </fieldset>
+                <fieldset>
+                  <legend class="recordingdate">Recording date</legend>
+                  <input
+                    type="text"
+                    id="recordingdate"
+                    name="recordingdate"
+                    placeholder="When your video was recorded"
+                  />
+                </fieldset>
+                <fieldset>
+                  <legend class="laplaceinfo">Laplace Info</legend>
+                  <select name="language" id="language">
+                    <option value="language">Language</option>
+                  </select>
+                  <select name="category" id="category">
+                    <option value="category">Category</option>
+                  </select>
+                  <select name="season" id="season">
+                    <option value="season">Season</option>
+                  </select>
+                  <select name="weather" id="weather">
+                    <option value="weather">Weather</option>
+                  </select>
+                  <select name="daytime" id="daytime">
+                    <option value="daytime">Daytime</option>
+                  </select>
+                </fieldset>
+                <fieldset>
+                  <legend>Tags</legend>
+                  <div class="tag-input">
+                    <input type="text" id="tags" placeholder="Add a tag" />
+                    <button type="button">Add</button>
+                  </div>
+                  <div class="tag-left">
+                    <span class="number">5</span>
+                    left
+                  </div>
+                </fieldset>
+              </div>
+              <div class="media-side">
+                <div class="media-side_section1">
+                  <h3 class="media-side_title">VR</h3>
+                  <!-- <img
+                    class="media-side_vruploaded"
+                    src="/build/img/index/calle madrid.jpg"
+                    alt=""
+                  /> -->
+                  <video id="source-video" width="416" height="234">
+                    <!-- <source src="movie.mp4" type="video/mp4" /> -->
+                    Your browser does not support the video tag.
+                  </video>
+                  <div class="media-side_filename">
+                    Filename: <span> IMG_1277.MP4</span>
+                  </div>
+                </div>
+                <div class="media-side_section2">
+                  <h3>Thumbnail</h3>
+                  <div class="thumbnailArea"></div>
+                  <label for="thumbnail-uploaded" id="thumbnail-upload_btn">
+                    <svg
+                      width="22"
+                      height="18"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g fill="none" fill-rule="evenodd">
+                        <rect
+                          stroke="#767676"
+                          stroke-width="2"
+                          x="1"
+                          y="1"
+                          width="20"
+                          height="16"
+                          rx="4"
+                        />
+                        <path
+                          d="M2 13c4.667-3.333 8.333-5.333 11-6 1.333 0 4 2 8 6v2l-4 2H3l-2-3 1-1z"
+                          fill="#767676"
+                        />
+                        <circle fill="#767676" cx="6" cy="5.5" r="2" />
+                      </g>
+                    </svg>
+                    Upload thumbnail</label
+                  >
+                  <input
+                    type="file"
+                    name="thumbnail-uploaded"
+                    id="thumbnail-uploaded"
+                  />
+                </div>
+              </div>
+              <footer class="popup-uploading-submit">
+                <p>Read the Lapalce license</p>
+                <div class="popup-uploading_buttons">
+                  <input type="reset" value="Cancel" />
+                  <input type="submit" value="Submit" />
+                </div>
+              </footer>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
     <!------------------MAIN CONTAINER------------------->
     <div class="main-container search-container vr-details-container">
       <div class="vr">

@@ -235,268 +235,505 @@
         <a href=""><span> View all </span></a>
       </div>
     </nav>
-    <!------------------MAIN CONTAINER------------------->
-    <div class="container main-container architecture-container">
-      <div class="introduction">
-        <h1 class="title">Architecture</h1>
-        <h2 class="subtitle">
-          Explore exteriors from around the world — from brutalist buildings to
-          minimalist structures that will give you a new appreciation for the
-          art of architecture.
-        </h2>
+    <div class="popup-container" id="popup-container">
+      <div class="popup">
+        <div class="popup-content">
+          <div class="popup-username">Hi Username 👋</div>
+          <div class="popup-text">
+            <p class="first-text">
+              Thanks for contributing to Laplace! You’re awesome. To save you
+              time and increase your chance of being featured, please ensure
+              that your photos meet our <a href="#">submission guidelines</a>.
+            </p>
+            <p class="second-text">
+              Note: Every photo on Laplace is published under the Laplace
+              License – which allows people to use photos
+              <span
+                >from Laplace for free, including for commercial purposes,
+                without attributing the photographer on Laplace.</span
+              >
+              <a href="#">Learn more</a>.
+            </p>
+          </div>
+          <div class="popup-imgconditions">
+            <img
+              src="/build/img/index/calle madrid.jpg"
+              alt=""
+              class="popup-imgconditions_img"
+            />
+            <div class="popup-imgconditions_conditions">
+              <div class="condition condition1">
+                01
+                <p class="conditions1-text">
+                  Only upload high quality photos. For a standard landscape
+                  orientation photo, <span>5 megapixels</span> is at least
+                  <span> 2500 by 2000 pixels </span>in size.
+                </p>
+              </div>
+              <div class="condition condition2">
+                02
+                <p class="conditions2-text">
+                  Photos are <span>clear, original</span> and are not over
+                  edited. Photos do not contain nudity or violent imagery.
+                  Unsplash is a place for people of all ages.
+                </p>
+              </div>
+              <div class="condition condition3">
+                03
+                <p class="conditions3-text">
+                  You must <span>own the rights</span> to any photo you share on
+                  Unsplash.You can read more about this in our
+                  <a href="#">Terms</a>.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="popup-footer">
+            <form class="popup-footer_form" action="">
+              <label
+                ><input
+                  type="checkbox"
+                  id="popup1-cbox1"
+                  value="I understand and agree"
+                />
+                I understand and agree</label
+              >
+              <input type="submit" value="Start uploading" id="submit-popup1" />
+            </form>
+          </div>
+        </div>
       </div>
-      <main class="container-home">
-        <div class="filter">
-          <form action="" class="form-home">
-            <div class="section1">
-              <div class="form-field">
-                <fieldset class="filter-continent">
-                  <select class="select" id="continent" name="continent">
-                    <option value="asia">Asia</option>
-                    <option value="africa">Africa</option>
-                    <option value="northamerica">North America</option>
-                    <option value="southamerica">South America</option>
-                    <option value="antarctica">Antarctica</option>
-                    <option value="europe">Europe</option>
-                    <option value="oceania">Oceania</option>
-                  </select>
+      <div class="popup popup-upload">
+        <div class="popup-content popup-content_upload">
+          <header class="popup-upload_title">
+            Upload VR
+            <button type="button" class="home-popup_closebtn">x</button>
+          </header>
+          <div class="popup-upload_main" id="popup-upload_main">
+            <div class="popup-upload_icon">
+              <i class="fas fa-long-arrow-alt-up"></i>
+            </div>
+            <div class="popup-upload_text">
+              <p>Drag and drop VR files to upload</p>
+              <p>Your VR will be private until you publish them.</p>
+            </div>
+            <form class="popup-upload_form" action="">
+              <label
+                for="vr-file-upload"
+                class="popup-upload_btn"
+                id="popup-upload_btn"
+              >
+                Select files
+              </label>
+              <input id="vr-file-upload" type="file" />
+            </form>
+            <p class="popup-upload-warning">
+              <i class="fas fa-exclamation-triangle"></i>
+              Invalid file format. Learn more
+            </p>
+          </div>
+          <footer class="popup-upload-terms">
+            <p>
+              By submitting your VR contents to Laplace, you acknowledge that
+              you agree to Laplace’s Terms of Service.
+            </p>
+            <p>
+              Please be sure not to violate others' copyright or privacy rights.
+              Learn more
+            </p>
+          </footer>
+        </div>
+      </div>
+      <div class="popup popup-uploading">
+        <div class="popup-content popup-content_uploading">
+          <header class="popup-uploading_title">
+            Upload VR
+            <button type="button" class="home-popup_closebtn">x</button>
+          </header>
+          <div class="popup-uploading_main" id="popup-uploading_main">
+            <form action="" class="popup-uploading_form">
+              <div class="form-side">
+                <fieldset>
+                  <legend class="title">Title</legend>
+                  <input type="text" id="title" name="title" />
                 </fieldset>
-              </div>
-              <div class="form-field">
-                <fieldset class="filter-country">
-                  <select class="select" id="country" name="country">
-                    <option value="">Morocco</option>
-                  </select>
+                <fieldset>
+                  <legend class="description">Description</legend>
+                  <textarea
+                    name="title"
+                    id="title"
+                    placeholder="8+ characters"
+                  ></textarea>
                 </fieldset>
-              </div>
-              <div class="form-field">
-                <fieldset class="filter-year">
-                  <select class="select" id="year" name="year">
-                    <option value="">Morocco</option>
-                  </select>
+                <fieldset>
+                  <legend class="location">Location</legend>
+                  <input
+                    type="text"
+                    id="location"
+                    name="location"
+                    placeholder="VR location"
+                  />
                 </fieldset>
-              </div>
-              <div class="form-field">
-                <fieldset class="filter-month">
-                  <select class="select" id="month" name="month">
-                    <option value="">Morocco</option>
-                  </select>
+                <fieldset>
+                  <legend class="recordingdate">Recording date</legend>
+                  <input
+                    type="text"
+                    id="recordingdate"
+                    name="recordingdate"
+                    placeholder="When your video was recorded"
+                  />
                 </fieldset>
-              </div>
-              <div class="form-field">
-                <fieldset class="filter-season">
-                  <select class="select" id="season" name="season">
-                    <option value="spring">Spring</option>
-                    <option value="summer">Summer</option>
-                    <option value="fall">Fall</option>
-                    <option value="winter">Winter</option>
+                <fieldset>
+                  <legend class="laplaceinfo">Laplace Info</legend>
+                  <select name="language" id="language">
+                    <option value="language">Language</option>
                   </select>
-                </fieldset>
-              </div>
-              <div class="form-field">
-                <fieldset class="filter-weather">
-                  <select class="select" id="weather" name="weather">
-                    <option value="sunny">Sunny</option>
-                    <option value="cloudy">cloudy</option>
-                    <option value="rain">Rain</option>
-                    <option value="snow">Snow</option>
-                    <option value="stormy">Stormy</option>
-                    <option value="fog">Fog</option>
-                    <option value="hurricanes">Hurricanes</option>
+                  <select name="category" id="category">
+                    <option value="category">Category</option>
                   </select>
-                </fieldset>
-              </div>
-              <div class="form-field">
-                <fieldset class="filter-time">
-                  <select class="select" id="time" name="time">
+                  <select name="season" id="season">
+                    <option value="season">Season</option>
+                  </select>
+                  <select name="weather" id="weather">
+                    <option value="weather">Weather</option>
+                  </select>
+                  <select name="daytime" id="daytime">
                     <option value="daytime">Daytime</option>
-                    <option value="night">Night</option>
                   </select>
                 </fieldset>
-              </div>
-            </div>
-            <div class="section2">
-              <div class="form-field">
-                <fieldset class="filter-vr">
-                  <select class="select" id="vr" name="vr">
-                    <option value="all">All VR</option>
-                    <option value="360">360&#176;</option>
-                    <option value="180">180&#176;</option>
-                    <option value="photo">Photo</option>
-                  </select>
+                <fieldset>
+                  <legend>Tags</legend>
+                  <div class="tag-input">
+                    <input type="text" id="tags" placeholder="Add a tag" />
+                    <button type="button">Add</button>
+                  </div>
+                  <div class="tag-left">
+                    <span class="number">5</span>
+                    left
+                  </div>
                 </fieldset>
               </div>
-              <div class="form-field">
-                <fieldset class="filter-quality">
-                  <select class="select" id="quality" name="quality">
-                    <option value="all">all</option>
-                    <option value="8k" selected>8K</option>
-                    <option value="4k">4K</option>
-                    <option value="fhd">FHD</option>
-                    <option value="hd">HD</option>
-                    <option value="720">720</option>
-                  </select>
-                </fieldset>
-              </div>
-              <div class="form-field">
-                <fieldset class="filter-sort">
-                  <select class="select" id="sort" name="sort">
-                    <option value="">Sort by</option>
-                    <option value="relevance">Relevance</option>
-                    <option value="popularity">Popularity</option>
-                    <option value="following">Following</option>
-                    <option value="recent">Recent</option>
-                  </select>
-                </fieldset>
-              </div>
-            </div>
-          </form>
-        </div>
-        <div class="media-elements">
-          <div class="media-element">
-            <div class="thumbnail">
-              <img src="/build/img/index/calle madrid.jpg" alt="" />
-              <div class="actions">
-                <span class="span-like">
-                  <svg
-                    width="20"
-                    height="20"
-                    xmlns="http://www.w3.org/2000/svg"
+              <div class="media-side">
+                <div class="media-side_section1">
+                  <h3 class="media-side_title">VR</h3>
+                  <!-- <img
+                    class="media-side_vruploaded"
+                    src="/build/img/index/calle madrid.jpg"
+                    alt=""
+                  /> -->
+                  <video id="source-video" width="416" height="234">
+                    <!-- <source src="movie.mp4" type="video/mp4" /> -->
+                    Your browser does not support the video tag.
+                  </video>
+                  <div class="media-side_filename">
+                    Filename: <span> IMG_1277.MP4</span>
+                  </div>
+                </div>
+                <div class="media-side_section2">
+                  <h3>Thumbnail</h3>
+                  <div class="thumbnailArea"></div>
+                  <label for="thumbnail-uploaded" id="thumbnail-upload_btn">
+                    <svg
+                      width="22"
+                      height="18"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g fill="none" fill-rule="evenodd">
+                        <rect
+                          stroke="#767676"
+                          stroke-width="2"
+                          x="1"
+                          y="1"
+                          width="20"
+                          height="16"
+                          rx="4"
+                        />
+                        <path
+                          d="M2 13c4.667-3.333 8.333-5.333 11-6 1.333 0 4 2 8 6v2l-4 2H3l-2-3 1-1z"
+                          fill="#767676"
+                        />
+                        <circle fill="#767676" cx="6" cy="5.5" r="2" />
+                      </g>
+                    </svg>
+                    Upload thumbnail</label
                   >
-                    <path
-                      d="M13.281 4c-.76 0-1.456.234-2.07.695-.588.442-.98 1.005-1.211 1.414-.23-.41-.623-.972-1.211-1.414A3.378 3.378 0 0 0 6.719 4C4.599 4 3 5.684 3 7.916c0 2.412 1.995 4.063 5.014 6.561.513.424 1.094.905 1.698 1.418a.445.445 0 0 0 .576 0 171.25 171.25 0 0 1 1.698-1.418C15.006 11.979 17 10.328 17 7.917 17 5.683 15.401 4 13.281 4z"
-                      fill="#767676"
-                      fill-rule="nonzero"
-                    />
-                  </svg>
-                </span>
-                <span class="span-collection">
-                  <svg
-                    width="20"
-                    height="20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M6.78 4a2 2 0 0 1 1.093.325L9.502 5.39a2 2 0 0 0 1.093.325H15a2 2 0 0 1 2 2V14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1.78zM10 7.8a.6.6 0 0 0-.6.6v1.8H7.6a.6.6 0 0 0 0 1.2h1.8v1.8a.6.6 0 0 0 1.2 0v-1.801l1.8.001a.6.6 0 0 0 0-1.2h-1.8V8.4a.6.6 0 0 0-.6-.6z"
-                      fill="#767676"
-                      fill-rule="evenodd"
-                    />
-                  </svg>
-                </span>
+                  <input
+                    type="file"
+                    name="thumbnail-uploaded"
+                    id="thumbnail-uploaded"
+                  />
+                </div>
               </div>
-            </div>
-            <div class="details">
-              <a href="#" class="avatar-link">
-                <img src="/build/img/index/avatar.jpg" alt="" />
-              </a>
-              <div class="description">
-                <h3 class="description-title">
-                  🇮🇹 ROME ITALY - 4K Walking Tour around the City
-                </h3>
-                <p class="description-username">Snowkevv</p>
-              </div>
-            </div>
-          </div>
-          <div class="media-element">
-            <div class="thumbnail">
-              <img src="/build/img/index/calle madrid.jpg" alt="" />
-              <div class="actions">
-                <span class="span-like">
-                  <svg
-                    width="20"
-                    height="20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M13.281 4c-.76 0-1.456.234-2.07.695-.588.442-.98 1.005-1.211 1.414-.23-.41-.623-.972-1.211-1.414A3.378 3.378 0 0 0 6.719 4C4.599 4 3 5.684 3 7.916c0 2.412 1.995 4.063 5.014 6.561.513.424 1.094.905 1.698 1.418a.445.445 0 0 0 .576 0 171.25 171.25 0 0 1 1.698-1.418C15.006 11.979 17 10.328 17 7.917 17 5.683 15.401 4 13.281 4z"
-                      fill="#767676"
-                      fill-rule="nonzero"
-                    />
-                  </svg>
-                </span>
-                <span class="span-collection">
-                  <svg
-                    width="20"
-                    height="20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M6.78 4a2 2 0 0 1 1.093.325L9.502 5.39a2 2 0 0 0 1.093.325H15a2 2 0 0 1 2 2V14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1.78zM10 7.8a.6.6 0 0 0-.6.6v1.8H7.6a.6.6 0 0 0 0 1.2h1.8v1.8a.6.6 0 0 0 1.2 0v-1.801l1.8.001a.6.6 0 0 0 0-1.2h-1.8V8.4a.6.6 0 0 0-.6-.6z"
-                      fill="#767676"
-                      fill-rule="evenodd"
-                    />
-                  </svg>
-                </span>
-              </div>
-            </div>
-            <div class="details">
-              <a href="#" class="avatar-link">
-                <img src="/build/img/index/avatar.jpg" alt="" />
-              </a>
-              <div class="description">
-                <h3 class="description-title">
-                  🇮🇹 ROME ITALY - 4K Walking Tour around the City
-                </h3>
-                <p class="description-username">Snowkevv</p>
-              </div>
-            </div>
-          </div>
-          <div class="media-element">
-            <div class="thumbnail">
-              <img src="/build/img/index/calle madrid.jpg" alt="" />
-              <div class="actions">
-                <span class="span-like">
-                  <svg
-                    width="20"
-                    height="20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M13.281 4c-.76 0-1.456.234-2.07.695-.588.442-.98 1.005-1.211 1.414-.23-.41-.623-.972-1.211-1.414A3.378 3.378 0 0 0 6.719 4C4.599 4 3 5.684 3 7.916c0 2.412 1.995 4.063 5.014 6.561.513.424 1.094.905 1.698 1.418a.445.445 0 0 0 .576 0 171.25 171.25 0 0 1 1.698-1.418C15.006 11.979 17 10.328 17 7.917 17 5.683 15.401 4 13.281 4z"
-                      fill="#767676"
-                      fill-rule="nonzero"
-                    />
-                  </svg>
-                </span>
-                <span class="span-collection">
-                  <svg
-                    width="20"
-                    height="20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M6.78 4a2 2 0 0 1 1.093.325L9.502 5.39a2 2 0 0 0 1.093.325H15a2 2 0 0 1 2 2V14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1.78zM10 7.8a.6.6 0 0 0-.6.6v1.8H7.6a.6.6 0 0 0 0 1.2h1.8v1.8a.6.6 0 0 0 1.2 0v-1.801l1.8.001a.6.6 0 0 0 0-1.2h-1.8V8.4a.6.6 0 0 0-.6-.6z"
-                      fill="#767676"
-                      fill-rule="evenodd"
-                    />
-                  </svg>
-                </span>
-              </div>
-            </div>
-            <div class="details">
-              <a href="#" class="avatar-link">
-                <img src="/build/img/index/avatar.jpg" alt="" />
-              </a>
-              <div class="description">
-                <h3 class="description-title">
-                  🇮🇹 ROME ITALY - 4K Walking Tour around the City
-                </h3>
-                <p class="description-username">Snowkevv</p>
-              </div>
-            </div>
+              <footer class="popup-uploading-submit">
+                <p>Read the Lapalce license</p>
+                <div class="popup-uploading_buttons">
+                  <input type="reset" value="Cancel" />
+                  <input type="submit" value="Submit" />
+                </div>
+              </footer>
+            </form>
           </div>
         </div>
-      </main>
-    </div>
-    <!------------------FOOTER------------------->
-    <footer class="footer">
-      <div class="container footer-logo">
-        <a href="/">
-          <img src="/build/img/index/combined-shape-2 (2).png" alt=""
-        /></a>
-        <span>Share your space</span>
       </div>
-    </footer>
+    </div>
+    <!------------------MAIN CONTAINER------------------->
+    <div class="flex-wrapper">
+      <div class="container main-container architecture-container">
+        <div class="introduction">
+          <h1 class="title">Architecture</h1>
+          <h2 class="subtitle">
+            Explore exteriors from around the world — from brutalist buildings
+            to minimalist structures that will give you a new appreciation for
+            the art of architecture.
+          </h2>
+        </div>
+        <main class="container-home container-home_architecture">
+          <div class="filter">
+            <form action="" class="form-home">
+              <div class="section1">
+                <div class="form-field">
+                  <fieldset class="filter-continent">
+                    <select class="select" id="continent" name="continent">
+                      <option value="asia">Asia</option>
+                      <option value="africa">Africa</option>
+                      <option value="northamerica">North America</option>
+                      <option value="southamerica">South America</option>
+                      <option value="antarctica">Antarctica</option>
+                      <option value="europe">Europe</option>
+                      <option value="oceania">Oceania</option>
+                    </select>
+                  </fieldset>
+                </div>
+                <div class="form-field">
+                  <fieldset class="filter-country">
+                    <select class="select" id="country" name="country"></select>
+                  </fieldset>
+                </div>
+                <div class="form-field">
+                  <fieldset class="filter-year">
+                    <select class="select" id="year" name="year"></select>
+                  </fieldset>
+                </div>
+                <div class="form-field">
+                  <fieldset class="filter-month">
+                    <select class="select" id="month" name="month"></select>
+                  </fieldset>
+                </div>
+                <div class="form-field">
+                  <fieldset class="filter-season">
+                    <select class="select" id="season" name="season">
+                      <option value="spring">Spring</option>
+                      <option value="summer">Summer</option>
+                      <option value="fall">Fall</option>
+                      <option value="winter">Winter</option>
+                    </select>
+                  </fieldset>
+                </div>
+                <div class="form-field">
+                  <fieldset class="filter-weather">
+                    <select class="select" id="weather" name="weather">
+                      <option value="sunny">Sunny</option>
+                      <option value="cloudy">cloudy</option>
+                      <option value="rain">Rain</option>
+                      <option value="snow">Snow</option>
+                      <option value="stormy">Stormy</option>
+                      <option value="fog">Fog</option>
+                      <option value="hurricanes">Hurricanes</option>
+                    </select>
+                  </fieldset>
+                </div>
+                <div class="form-field">
+                  <fieldset class="filter-time">
+                    <select class="select" id="time" name="time">
+                      <option value="daytime">Daytime</option>
+                      <option value="night">Night</option>
+                    </select>
+                  </fieldset>
+                </div>
+              </div>
+              <div class="section2">
+                <div class="form-field">
+                  <fieldset class="filter-vr">
+                    <select class="select" id="vr" name="vr">
+                      <option value="all">All VR</option>
+                      <option value="360">360&#176;</option>
+                      <option value="180">180&#176;</option>
+                      <option value="photo">Photo</option>
+                    </select>
+                  </fieldset>
+                </div>
+                <div class="form-field">
+                  <fieldset class="filter-quality">
+                    <select class="select" id="quality" name="quality">
+                      <option value="all">all</option>
+                      <option value="8k" selected>8K</option>
+                      <option value="4k">4K</option>
+                      <option value="fhd">FHD</option>
+                      <option value="hd">HD</option>
+                      <option value="720">720</option>
+                    </select>
+                  </fieldset>
+                </div>
+                <div class="form-field">
+                  <fieldset class="filter-sort">
+                    <select class="select" id="sort" name="sort">
+                      <option value="">Sort by</option>
+                      <option value="relevance">Relevance</option>
+                      <option value="popularity">Popularity</option>
+                      <option value="following">Following</option>
+                      <option value="recent">Recent</option>
+                    </select>
+                  </fieldset>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="media-elements">
+            <div class="media-element">
+              <div class="thumbnail">
+                <img src="/build/img/index/calle madrid.jpg" alt="" />
+                <div class="actions">
+                  <span class="span-like">
+                    <svg
+                      width="20"
+                      height="20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M13.281 4c-.76 0-1.456.234-2.07.695-.588.442-.98 1.005-1.211 1.414-.23-.41-.623-.972-1.211-1.414A3.378 3.378 0 0 0 6.719 4C4.599 4 3 5.684 3 7.916c0 2.412 1.995 4.063 5.014 6.561.513.424 1.094.905 1.698 1.418a.445.445 0 0 0 .576 0 171.25 171.25 0 0 1 1.698-1.418C15.006 11.979 17 10.328 17 7.917 17 5.683 15.401 4 13.281 4z"
+                        fill="#767676"
+                        fill-rule="nonzero"
+                      />
+                    </svg>
+                  </span>
+                  <span class="span-collection">
+                    <svg
+                      width="20"
+                      height="20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M6.78 4a2 2 0 0 1 1.093.325L9.502 5.39a2 2 0 0 0 1.093.325H15a2 2 0 0 1 2 2V14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1.78zM10 7.8a.6.6 0 0 0-.6.6v1.8H7.6a.6.6 0 0 0 0 1.2h1.8v1.8a.6.6 0 0 0 1.2 0v-1.801l1.8.001a.6.6 0 0 0 0-1.2h-1.8V8.4a.6.6 0 0 0-.6-.6z"
+                        fill="#767676"
+                        fill-rule="evenodd"
+                      />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+              <div class="details">
+                <a href="#" class="avatar-link">
+                  <img src="/build/img/index/avatar.jpg" alt="" />
+                </a>
+                <div class="description">
+                  <h3 class="description-title">
+                    🇮🇹 ROME ITALY - 4K Walking Tour around the City
+                  </h3>
+                  <p class="description-username">Snowkevv</p>
+                </div>
+              </div>
+            </div>
+            <div class="media-element">
+              <div class="thumbnail">
+                <img src="/build/img/index/calle madrid.jpg" alt="" />
+                <div class="actions">
+                  <span class="span-like">
+                    <svg
+                      width="20"
+                      height="20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M13.281 4c-.76 0-1.456.234-2.07.695-.588.442-.98 1.005-1.211 1.414-.23-.41-.623-.972-1.211-1.414A3.378 3.378 0 0 0 6.719 4C4.599 4 3 5.684 3 7.916c0 2.412 1.995 4.063 5.014 6.561.513.424 1.094.905 1.698 1.418a.445.445 0 0 0 .576 0 171.25 171.25 0 0 1 1.698-1.418C15.006 11.979 17 10.328 17 7.917 17 5.683 15.401 4 13.281 4z"
+                        fill="#767676"
+                        fill-rule="nonzero"
+                      />
+                    </svg>
+                  </span>
+                  <span class="span-collection">
+                    <svg
+                      width="20"
+                      height="20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M6.78 4a2 2 0 0 1 1.093.325L9.502 5.39a2 2 0 0 0 1.093.325H15a2 2 0 0 1 2 2V14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1.78zM10 7.8a.6.6 0 0 0-.6.6v1.8H7.6a.6.6 0 0 0 0 1.2h1.8v1.8a.6.6 0 0 0 1.2 0v-1.801l1.8.001a.6.6 0 0 0 0-1.2h-1.8V8.4a.6.6 0 0 0-.6-.6z"
+                        fill="#767676"
+                        fill-rule="evenodd"
+                      />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+              <div class="details">
+                <a href="#" class="avatar-link">
+                  <img src="/build/img/index/avatar.jpg" alt="" />
+                </a>
+                <div class="description">
+                  <h3 class="description-title">
+                    🇮🇹 ROME ITALY - 4K Walking Tour around the City
+                  </h3>
+                  <p class="description-username">Snowkevv</p>
+                </div>
+              </div>
+            </div>
+            <div class="media-element">
+              <div class="thumbnail">
+                <img src="/build/img/index/calle madrid.jpg" alt="" />
+                <div class="actions">
+                  <span class="span-like">
+                    <svg
+                      width="20"
+                      height="20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M13.281 4c-.76 0-1.456.234-2.07.695-.588.442-.98 1.005-1.211 1.414-.23-.41-.623-.972-1.211-1.414A3.378 3.378 0 0 0 6.719 4C4.599 4 3 5.684 3 7.916c0 2.412 1.995 4.063 5.014 6.561.513.424 1.094.905 1.698 1.418a.445.445 0 0 0 .576 0 171.25 171.25 0 0 1 1.698-1.418C15.006 11.979 17 10.328 17 7.917 17 5.683 15.401 4 13.281 4z"
+                        fill="#767676"
+                        fill-rule="nonzero"
+                      />
+                    </svg>
+                  </span>
+                  <span class="span-collection">
+                    <svg
+                      width="20"
+                      height="20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M6.78 4a2 2 0 0 1 1.093.325L9.502 5.39a2 2 0 0 0 1.093.325H15a2 2 0 0 1 2 2V14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1.78zM10 7.8a.6.6 0 0 0-.6.6v1.8H7.6a.6.6 0 0 0 0 1.2h1.8v1.8a.6.6 0 0 0 1.2 0v-1.801l1.8.001a.6.6 0 0 0 0-1.2h-1.8V8.4a.6.6 0 0 0-.6-.6z"
+                        fill="#767676"
+                        fill-rule="evenodd"
+                      />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+              <div class="details">
+                <a href="#" class="avatar-link">
+                  <img src="/build/img/index/avatar.jpg" alt="" />
+                </a>
+                <div class="description">
+                  <h3 class="description-title">
+                    🇮🇹 ROME ITALY - 4K Walking Tour around the City
+                  </h3>
+                  <p class="description-username">Snowkevv</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+      <!------------------FOOTER------------------->
+      <footer class="footer">
+        <div class="container footer-logo">
+          <a href="/">
+            <img src="/build/img/index/combined-shape-2 (2).png" alt=""
+          /></a>
+          <span>Share your space</span>
+        </div>
+      </footer>
+    </div>
     <!------------------SCRIPTS------------------->
 
     <!--Custom javascript-->

@@ -92,9 +92,11 @@ window.addEventListener("DOMContentLoaded", function (event) {
       .then((data) => {
         data.forEach((country) => {
           if (country.region == "Asia") {
-            document.querySelector(
-              "#country"
-            ).innerHTML += `<option value="${country.name}">${country.name}</option>`;
+            if (document.querySelector("#country")) {
+              document.querySelector(
+                "#country"
+              ).innerHTML += `<option value="${country.name}">${country.name}</option>`;
+            }
           }
         });
       })
@@ -104,70 +106,74 @@ window.addEventListener("DOMContentLoaded", function (event) {
   }
   loadCountries();
 
-  document.querySelector("#continent").addEventListener("change", (e) => {
-    document.querySelector("#country").innerHTML = "";
-    fetch("https://restcountries.com/v2/all")
-      .then((res) => {
-        return res.json();
-      })
-      .then((data) => {
-        switch (document.querySelector("#continent").value) {
-          case "asia":
-            data.forEach((country) => {
-              if (country.region == "Asia") {
-                insertCountries(country);
-              }
-            });
-            break;
-          case "africa":
-            data.forEach((country) => {
-              if (country.region == "Africa") {
-                insertCountries(country);
-              }
-            });
-            break;
-          case "europe":
-            data.forEach((country) => {
-              if (country.region == "Europe") {
-                insertCountries(country);
-              }
-            });
-            break;
-          case "americas":
-            data.forEach((country) => {
-              if (country.region == "Americas") {
-                insertCountries(country);
-              }
-            });
-            break;
-          case "oceania":
-            data.forEach((country) => {
-              if (country.region == "Oceania") {
-                insertCountries(country);
-              }
-            });
-            break;
-          case "antarctica":
-            data.forEach((country) => {
-              if (country.region == "Polar") {
-                insertCountries(country);
-              }
-            });
-            break;
-          default:
-            break;
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  });
+  if (document.querySelector("#continent")) {
+    document.querySelector("#continent").addEventListener("change", (e) => {
+      document.querySelector("#country").innerHTML = "";
+      fetch("https://restcountries.com/v2/all")
+        .then((res) => {
+          return res.json();
+        })
+        .then((data) => {
+          switch (document.querySelector("#continent").value) {
+            case "asia":
+              data.forEach((country) => {
+                if (country.region == "Asia") {
+                  insertCountries(country);
+                }
+              });
+              break;
+            case "africa":
+              data.forEach((country) => {
+                if (country.region == "Africa") {
+                  insertCountries(country);
+                }
+              });
+              break;
+            case "europe":
+              data.forEach((country) => {
+                if (country.region == "Europe") {
+                  insertCountries(country);
+                }
+              });
+              break;
+            case "americas":
+              data.forEach((country) => {
+                if (country.region == "Americas") {
+                  insertCountries(country);
+                }
+              });
+              break;
+            case "oceania":
+              data.forEach((country) => {
+                if (country.region == "Oceania") {
+                  insertCountries(country);
+                }
+              });
+              break;
+            case "antarctica":
+              data.forEach((country) => {
+                if (country.region == "Polar") {
+                  insertCountries(country);
+                }
+              });
+              break;
+            default:
+              break;
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    });
+  }
 
   // insert countries in select option function
   function insertCountries(country) {
-    document.querySelector(
-      "#country"
-    ).innerHTML += `<option value="${country.name}">${country.name}</option>`;
+    if (document.querySelector("#country")) {
+      document.querySelector(
+        "#country"
+      ).innerHTML += `<option value="${country.name}">${country.name}</option>`;
+    }
   }
   // Load Date
   function loadDate() {
@@ -177,7 +183,9 @@ window.addEventListener("DOMContentLoaded", function (event) {
       options += `<option value=${y}> ${y} </option>`;
     }
     console.log(nowYear);
-    document.querySelector("#year").innerHTML = options;
+    if (document.querySelector("#year")) {
+      document.querySelector("#year").innerHTML = options;
+    }
   }
   loadDate();
 
@@ -201,7 +209,9 @@ window.addEventListener("DOMContentLoaded", function (event) {
     for (var i = 0; i < monthNames.length; i++) {
       options += `<option value=${monthNames[i]}> ${monthNames[i]} </option>`;
     }
-    document.querySelector("#month").innerHTML = options;
+    if (document.querySelector("#month")) {
+      document.querySelector("#month").innerHTML = options;
+    }
   }
   loadMonth();
   /**
@@ -257,11 +267,13 @@ window.addEventListener("DOMContentLoaded", function (event) {
   /**
    * Change color when icon is clicked
    */
-  spanIcons.forEach((spanIcon) => {
-    spanIcon.addEventListener("click", () => {
-      spanIcon.classList.toggle("clicked");
+  if (spanIcons) {
+    spanIcons.forEach((spanIcon) => {
+      spanIcon.addEventListener("click", () => {
+        spanIcon.classList.toggle("clicked");
+      });
     });
-  });
+  }
 
   /**
    * show up the search bar dropdown menu
@@ -280,9 +292,11 @@ window.addEventListener("DOMContentLoaded", function (event) {
   /**
    * Mobile menu
    */
-  mobileMenuBtn.addEventListener("click", () => {
-    mobileMenuContent.classList.toggle("active");
-  });
+  if (mobileMenuBtn) {
+    mobileMenuBtn.addEventListener("click", () => {
+      mobileMenuContent.classList.toggle("active");
+    });
+  }
 
   // Show Laplace & Legal submenu
   contentLaplaceLegend.forEach((title) => {
@@ -442,4 +456,97 @@ window.addEventListener("DOMContentLoaded", function (event) {
       });
     });
   }
+
+  /**
+   *  ******************************************** USER PAGE *****************************************************
+   */
+  //Variables
+  var viewsChartElement = document
+    .getElementById("views-chart")
+    .getContext("2d");
+  var likesChartElement = document
+    .getElementById("likes-chart")
+    .getContext("2d");
+
+  // Disable data in column and row
+  Chart.defaults.scale.ticks.display = false;
+
+  // Enable Chart for views
+  let last30Days = [];
+  let dateNow;
+  let j;
+  for (let i = 0; i < 30; i++) {
+    if (new Date().getDate() - i <= 0) {
+      j = i - 30;
+      dateNow = new Date().getDate() - j;
+      last30Days.push(dateNow);
+    } else {
+      dateNow = new Date().getDate() - i;
+      last30Days.push(dateNow);
+    }
+  }
+  let viewsNumberData = [];
+  for (let i = 0; i < 30; i++) {
+    viewsNumberData.push(Math.random() * 1000);
+  }
+
+  // Add data to views chart
+  let viewsChart = new Chart(viewsChartElement, {
+    type: "line",
+    data: {
+      labels: last30Days.reverse(),
+      datasets: [
+        {
+          label: "",
+          data: viewsNumberData,
+          tension: 0.5,
+          pointHoverBackgroundColor: "rgb(255, 255, 255)",
+          pointHoverBorderColor: "rgb(0, 218, 187)",
+          pointBackgroundColor: "rgba(255, 255 , 255, 0)",
+          pointBorderColor: "rgba(255, 255 , 255, 0)",
+          borderColor: "#171717",
+          hoverBorderColor: "rgb(0, 218, 187)",
+          borderWidth: 1.5,
+        },
+      ],
+    },
+    options: {
+      hover: { mode: "dataset", intersect: true },
+      plugins: {
+        legend: {
+          display: false,
+        },
+      },
+    },
+  });
+
+  // Add data to likes chart
+  let likesChart = new Chart(likesChartElement, {
+    type: "line",
+    data: {
+      labels: last30Days.reverse(),
+      datasets: [
+        {
+          label: "",
+          data: viewsNumberData,
+          tension: 0.5,
+          pointHoverBackgroundColor: "rgb(255, 255, 255)",
+          pointHoverBorderColor: "rgb(0, 218, 187)",
+          pointBackgroundColor: "rgba(255, 255 , 255, 0)",
+          pointBorderColor: "rgba(255, 255 , 255, 0)",
+          borderColor: "#171717",
+          hoverBorderColor: "rgb(0, 218, 187)",
+          borderWidth: 1.5,
+        },
+      ],
+    },
+    options: {
+      hover: { mode: "dataset", intersect: true },
+      plugins: {
+        legend: {
+          display: false,
+        },
+      },
+    },
+  });
 });

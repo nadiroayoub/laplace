@@ -46,8 +46,14 @@
 }
 
 .search-container {
+  width: 100%;
   .introduction {
     margin-bottom: 6.3rem;
+    &.title-noresults {
+      @include tablet() {
+        margin-bottom: 25.9rem;
+      }
+    }
   }
 }
 

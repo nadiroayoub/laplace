@@ -1,0 +1,45 @@
+.error404-container {
+  position: relative;
+  margin-top: 3rem;
+  width: 100%;
+  height: auto;
+  .error404-text {
+    .error404-text_title,
+    .error404-text_desc {
+      position: absolute;
+      text-shadow: 0 2px 4px rgba(179, 179, 179, 0.5);
+      font-family: $secondary_font;
+      font-weight: $extraBold;
+      text-align: center;
+      color: $white;
+      left: 50%;
+      transform: translate(-50%);
+    }
+    .error404-text_title {
+      font-size: 4rem;
+      top: 3rem;
+      @include tablet() {
+        top: 8.1rem;
+        font-size: 12rem;
+      }
+      margin-bottom: 0.9rem;
+    }
+    .error404-text_desc {
+      top: 8rem;
+      font-size: 2.2rem;
+      @include tablet() {
+        font-size: 5.6rem;
+        top: 23.6rem;
+      }
+      .word-wrap {
+        display: block;
+      }
+    }
+  }
+}
+.footer.footer-error404 {
+  margin-top: 0;
+  @include tablet() {
+    margin-top: 6rem;
+  }
+}

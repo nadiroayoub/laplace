@@ -30,6 +30,13 @@
 @import "layout/userpage/userpage";
 @import "layout/userpage/userpage-collections";
 @import "layout/userpage/userpage-collections-details";
+@import "layout/userpage/userpage-settings";
 
 /*ABOUT PAGE*/
 @import "layout/about";
+
+/*LICENSE PAGE*/
+@import "layout/license/license";
+
+/*404 error page*/
+@import "layout/error404";

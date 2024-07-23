@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Page title-->
+    <title>Search page Laplace | Laplace</title>
+    <!--Fonts used - cdn-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!--Fontwesome icon-->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+    <!--Local style file-->
+    <link rel="stylesheet" href="build/css/app.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.js"
+      type="text/javascript"
+    ></script>
+    <!-- <script src="path/to/chartjs/dist/chart.js"></script> -->
+  </head>
+  <body id="uspage">
+    <div id="fb-root"></div>
+    <script
+      async
+      defer
+      crossorigin="anonymous"
+      src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v11.0&appId=537555550655230&autoLogAppEvents=1"
+      nonce="WUQsy61b"
+    ></script>
+
+    <header class="header">
+      <nav class="navigation">
+        <div class="logo-and-searchbar">
+          <a href="/" class="logo">
+            <img
+              src="build/img/header/combined-shape-2.png"
+              alt=""
+              class="logo_shape"
+            />
+            <div class="logo-slogan">
+              <svg
+                class="logo_laplace"
+                width="56"
+                height="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g fill="none" fill-rule="evenodd">
+                  <path fill="#FFF" d="M-54-19h1920v2400H-54z" />
+                  <path
+                    d="M8.96 11.806V8.372h-.208c-.267 2.974-3.782 3.217-4.605 3.228h-.35V2.136C3.797.997 4.263.87 4.955.87V.665H0V.87c.692 0 1.03.19 1.03 1.156v8.023c0 1.077-.21 1.551-.901 1.551v.206H8.96zm3.218.143c1.142 0 2.027-.586 2.252-1.346.148 1.233 1.512 1.336 1.738 1.345h.032c1.013 0 1.802-.538 1.979-1.139l-.177-.095c-.097.27-.467.27-.467.27-.727.014-.77-.98-.772-1.097v-2.37c0-1.867-.869-3.165-2.976-3.165l-.037-.001h-.103c-.264.004-.862.049-1.405.333-.74.38-.98.744-1.158.982-.225.269-.257.696-.08 1.06.257.49.885.68 1.383.427.499-.269.692-.87.435-1.36-.145-.254-.338-.412-.596-.475-.337-.095-.112-.349.145-.475 1.11-.554 2.043.285 2.043 1.93v.998c-2.831.68-4.166.917-4.166 2.563 0 1.488 1.624 1.615 1.93 1.615zm1.368-.966c-.837 0-.837-1.044-.837-1.044 0-.776.257-1.63 1.705-1.947v2.295c-.16.38-.45.696-.868.696zM22.056 16v-.206c-.563-.142-.66-.712-.66-1.582v-2.69c.483.268 1.142.427 1.947.427 2.155 0 4.07-.982 4.07-3.83 0-2.216-1.4-3.767-3.41-3.767-1.127 0-2.124.412-2.607 1.266V4.352l-3.185.649v.206c.66.237.82.395.82.95v8.055c0 .807-.016 1.408-.627 1.582V16h3.652zm.949-4.257c-.837 0-1.496-.649-1.609-2.168V6.758c.097-.997.531-1.836 1.496-1.836 1.223 0 1.754 1.187 1.754 3.387 0 2.468-.612 3.434-1.641 3.434zm8.912.063v-.19c-.579-.158-.66-.791-.66-1.661V0l-3.2.633v.19c.659.237.836.475.836 1.029v8.103c0 .822-.032 1.487-.644 1.661v.19h3.668zm2.623.143c1.142 0 2.027-.586 2.252-1.346.147 1.233 1.511 1.336 1.738 1.345h.031c1.014 0 1.802-.538 1.98-1.139l-.178-.095c-.096.27-.466.27-.466.27-.727.014-.77-.98-.772-1.097v-2.37c0-1.867-.87-3.165-2.977-3.165l-.036-.001h-.103c-.265.004-.862.049-1.405.333-.74.38-.981.744-1.158.982-.226.269-.258.696-.08 1.06.257.49.884.68 1.383.427.498-.269.691-.87.434-1.36-.145-.254-.338-.412-.595-.475-.338-.095-.113-.349.145-.475 1.11-.554 2.043.285 2.043 1.93v.998c-2.832.68-4.167.917-4.167 2.563 0 1.488 1.625 1.615 1.93 1.615zm1.367-.966c-.837 0-.837-1.044-.837-1.044 0-.776.258-1.63 1.706-1.947v2.295c-.161.38-.45.696-.87.696zm8.832.966c2.01 0 3.056-1.219 3.17-2.121l-.178-.095c-.29.538-1.223.886-2.027.807-1.239-.127-2.075-.95-2.075-2.659 0-2.421.981-3.323 1.737-3.323.805 0 1.078.396.917.475a.957.957 0 0 0-.547.633c-.193.57.129 1.187.724 1.377a1.148 1.148 0 0 0 1.432-.728c.113-.396-.016-.87-.29-1.124-.337-.332-1.077-.839-2.284-.839-2.896 0-4.28 1.773-4.28 3.767 0 2.041 1.593 3.83 3.7 3.83zm7.657 0c2.092 0 3.154-1.187 3.379-2.184l-.21-.08c-.353 1.045-1.544 1.44-2.38 1.25-1.078-.237-1.866-.949-1.93-2.927H56c0-2.722-1.351-3.656-3.378-3.656-2.092 0-3.91 1.361-3.91 3.83 0 1.994 1.577 3.767 3.684 3.767zm1.464-4.147h-2.606c0-1.52.515-3.244 1.368-3.244.804 0 1.238 1.25 1.238 3.244z"
+                    fill="#171717"
+                    fill-rule="nonzero"
+                  />
+                </g>
+              </svg>
+              <p class="slogan">Space experience for everyone</p>
+            </div>
+          </a>
+          <div class="search-bar">
+            <form action="">
+              <button class="button-search" type="submit">
+                <img src="build/img/header/search-icon.png" alt="" />
+              </button>
+              <div class="search-div">
+                <input
+                  class="search-input"
+                  type="search"
+                  placeholder="Search high-resolution 360° videos"
+                />
+              </div>
+              <!-- clear button created with javascript -->
+            </form>
+          </div>
+        </div>
+        <div class="navigation-about">
+          <ul>
+            <li>
+              <a href="about.html">About Laplace</a>
+            </li>
+          </ul>
+        </div>
+        <div class="navigation-join">
+          <div class="btn-submit">
+            <button type="button">
+              <a href="#popup-container" class="btn-submit_vr"
+                >Submit<span> a VR</span></a
+              >
+            </button>
+          </div>
+          <div class="btns-join">
+            <a href="signin.html">Sign in</a>
+            <a href="signup.html">Sign up</a>
+          </div>
+        </div>
+        <div class="mobile-menu">
+          <div class="mobile-menu_btn" id="mobile-menu_btn">
+            <i class="fas fa-bars"></i>
+          </div>
+          <div class="mobile-menu_content">
+            <div class="menu-content_laplace">
+              <div class="content-laplace_legend">
+                <img src="/build/img/index/laplace logo submenu.webp" alt="" />
+                Laplace
+                <svg
+                  class="triangle"
+                  width="10"
+                  height="10"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="m5.333 2.5 3.252 4.878A.4.4 0 0 1 8.253 8H1.747a.4.4 0 0 1-.332-.622L4.667 2.5a.4.4 0 0 1 .666 0z"
+                    fill="#CCC"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+              </div>
+              <ul class="content-laplace_submenu">
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact_us.html">Contact us</a></li>
+              </ul>
+            </div>
+            <div class="menu-content_legal">
+              <div class="content-laplace_legend">
+                <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M12.1 2c.22 0 .4.18.4.4v3.2c0 .22.18.4.4.4h3.2c.22 0 .4.18.4.4V17a1 1 0 0 1-1 1h-11a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h7.6zM14 14H6a.5.5 0 0 0-.09.992L6 15h8a.5.5 0 1 0 0-1zm0-3H6a.5.5 0 0 0-.09.992L6 12h8a.5.5 0 1 0 0-1zm-4-3H6a.5.5 0 0 0-.09.992L6 9h4a.5.5 0 1 0 0-1zm3.5-6 3 3h-3V2z"
+                    fill="#767676"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+                Legal
+                <svg
+                  class="triangle"
+                  width="10"
+                  height="10"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="m5.333 2.5 3.252 4.878A.4.4 0 0 1 8.253 8H1.747a.4.4 0 0 1-.332-.622L4.667 2.5a.4.4 0 0 1 .666 0z"
+                    fill="#CCC"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+              </div>
+              <ul class="content-laplace_submenu">
+                <li><a href="license.html">License</a></li>
+                <li><a href="privacy_policy.html">Privacy Policy</a></li>
+                <li><a href="terms.html">Terms</a></li>
+              </ul>
+            </div>
+            <div class="menu-content_btns">
+              <a
+                href="#popup-container"
+                type="button"
+                class="btn-submit_vr submit-btn_mobile"
+              >
+                Submit a VR</a
+              >
+              <a href="signup.html" class="signup-btn_mobile">Sign up</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="flex-wrapper">
+      <!------------------MAIN CONTAINER------------------->
+      <div
+        class="
+          container
+          main-container
+          architecture-container
+          search-container
+          userpage-container
+        "
+      >
+        <div class="userpage-details">
+          <div class="user-avatar">
+            <img src="/build/img/index/avatar.jpg" alt="" />
+          </div>
+          <div class="user-details">
+            <div class="user-details_section1">
+              <div class="name">Kevin Crave</div>
+              <div class="follow-button">
+                <a href="#">Follow</a>
+              </div>
+              <div class="message-button">
+                <a href="#">Message</a>
+              </div>
+              <div class="submenu-button">
+                <a href="#">. . .</a>
+              </div>
+            </div>
+            <div class="user-details_section2">
+              <div class="text">
+                <p>
+                  "Music to sleep deeply and rest the mind, relaxing and calm
+                  music to sleep. To stay calm and relieve stress after a hard
+                  day at work, turn on soothing music. By listening to relaxing
+                  music, you can reduce stress hormones in the body. It helps
+                  the body fight the symptoms of prolonged stress.”
+                </p>
+              </div>
+              <div class="location">
+                <img
+                  class="icon location-icon"
+                  src="/build/img/location-pin.png"
+                  alt=""
+                />
+                München, Deutschland
+              </div>
+              <div class="member-date">
+                <svg
+                  class="icon member-date_icon"
+                  width="20"
+                  height="20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g transform="translate(2.5)" fill="none" fill-rule="evenodd">
+                    <path
+                      d="M14 2a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h4.5v2.6a.4.4 0 0 0 .32.392L5.9 5h3.2a.4.4 0 0 0 .4-.4V2H14zM6.6 17H3.4a.4.4 0 0 0-.4.4v.2c0 .22.18.4.4.4h3.2a.4.4 0 0 0 .4-.4v-.2a.4.4 0 0 0-.4-.4zm5 0H8.4a.4.4 0 0 0-.4.4v.2c0 .22.18.4.4.4h3.2a.4.4 0 0 0 .4-.4v-.2a.4.4 0 0 0-.4-.4zm0-2H3.4a.4.4 0 0 0-.4.4v.2c0 .22.18.4.4.4h8.2a.4.4 0 0 0 .4-.4v-.2a.4.4 0 0 0-.4-.4zM7.5 5.5a2 2 0 0 0-1.4 3.428C5.438 9.378 5 10.138 5 11v1.6l.007.113a.9.9 0 0 0 .893.787h3.2l.113-.007A.9.9 0 0 0 10 12.6V11l-.007-.183A2.491 2.491 0 0 0 8.9 8.93 2 2 0 0 0 7.5 5.5zm0 4 .144.007.141.02A1.5 1.5 0 0 1 9 11v1.5H6V11l.007-.144A1.5 1.5 0 0 1 7.5 9.5zm0-3a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
+                      fill="#767676"
+                    />
+                    <rect
+                      stroke="#767676"
+                      x="6"
+                      y=".5"
+                      width="3"
+                      height="4"
+                      rx=".4"
+                    />
+                  </g>
+                </svg>
+                Member since Dec 2020
+              </div>
+              <div class="tags">
+                <ul class="tags_list">
+                  <li><a href="#">America</a></li>
+                  <li><a href="#">America</a></li>
+                  <li><a href="#">America</a></li>
+                  <li><a href="#">America</a></li>
+                  <li><a href="#">America</a></li>
+                  <li><a href="#">America</a></li>
+                  <li><a href="#">America</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <nav class="navigation navigation-search navigation-userpage">
+          <div>
+            <ul class="horizontal-sidenav">
+              <li class="menu-item">
+                <a class="active" href="#">
+                  <div class="icono">
+                    <img src="/build/img/search_page/vr-icon.png" alt="" />
+                  </div>
+                  <div class="text">
+                    <span class="active">VR</span>
+                    4,323
+                  </div>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a href="#">
+                  <div class="icono">
+                    <svg
+                      width="20"
+                      height="20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M13.281 4c-.76 0-1.456.234-2.07.695-.588.442-.98 1.005-1.211 1.414-.23-.41-.623-.972-1.211-1.414A3.378 3.378 0 0 0 6.719 4C4.599 4 3 5.684 3 7.916c0 2.412 1.995 4.063 5.014 6.561.513.424 1.094.905 1.698 1.418a.445.445 0 0 0 .576 0 171.25 171.25 0 0 1 1.698-1.418C15.006 11.979 17 10.328 17 7.917 17 5.683 15.401 4 13.281 4z"
+                        fill="#767676"
+                        fill-rule="nonzero"
+                      />
+                    </svg>
+                  </div>
+                  <div class="text">Likes 3</div>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a class="" href="#">
+                  <div class="icono">
+                    <svg
+                      width="20"
+                      height="20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M6.78 4a2 2 0 0 1 1.093.325L9.502 5.39a2 2 0 0 0 1.093.325H15a2 2 0 0 1 2 2V14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1.78zM10 7.8a.6.6 0 0 0-.6.6v1.8H7.6a.6.6 0 0 0 0 1.2h1.8v1.8a.6.6 0 0 0 1.2 0v-1.801l1.8.001a.6.6 0 0 0 0-1.2h-1.8V8.4a.6.6 0 0 0-.6-.6z"
+                        fill="#767676"
+                        fill-rule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                  <div class="text">Collections 3</div>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a class="" href="#">
+                  <div class="icono">
+                    <svg
+                      width="20"
+                      height="20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M6.6 11c.22 0 .4.18.4.4v5.2a.4.4 0 0 1-.4.4H3.4a.4.4 0 0 1-.4-.4v-5.2c0-.22.18-.4.4-.4h3.2zm5-4c.22 0 .4.18.4.4v9.2a.4.4 0 0 1-.4.4H8.4a.4.4 0 0 1-.4-.4V7.4c0-.22.18-.4.4-.4h3.2zm5-4c.22 0 .4.18.4.4v13.2a.4.4 0 0 1-.4.4h-3.2a.4.4 0 0 1-.4-.4V3.4c0-.22.18-.4.4-.4h3.2z"
+                        fill="#767676"
+                        fill-rule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                  <div class="text">Stats</div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <!-- vr container -->
+        <main class="container-home container-home_uspage active">
+          <div class="media-elements">
+            <div class="media-element">
+              <div class="thumbnail">
+                <img src="/build/img/index/calle madrid.jpg" alt="" />
+                <div class="actions">
+                  <span class="span-like">
+                    <svg
+                      width="20"
+                      height="20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M13.281 4c-.76 0-1.456.234-2.07.695-.588.442-.98 1.005-1.211 1.414-.23-.41-.623-.972-1.211-1.414A3.378 3.378 0 0 0 6.719 4C4.599 4 3 5.684 3 7.916c0 2.412 1.995 4.063 5.014 6.561.513.424 1.094.905 1.698 1.418a.445.445 0 0 0 .576 0 171.25 171.25 0 0 1 1.698-1.418C15.006 11.979 17 10.328 17 7.917 17 5.683 15.401 4 13.281 4z"
+                        fill="#767676"
+                        fill-rule="nonzero"
+                      />
+                    </svg>
+                  </span>
+                  <span class="span-collection">
+                    <svg
+                      width="20"
+                      height="20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M6.78 4a2 2 0 0 1 1.093.325L9.502 5.39a2 2 0 0 0 1.093.325H15a2 2 0 0 1 2 2V14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1.78zM10 7.8a.6.6 0 0 0-.6.6v1.8H7.6a.6.6 0 0 0 0 1.2h1.8v1.8a.6.6 0 0 0 1.2 0v-1.801l1.8.001a.6.6 0 0 0 0-1.2h-1.8V8.4a.6.6 0 0 0-.6-.6z"
+                        fill="#767676"
+                        fill-rule="evenodd"
+                      />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+              <div class="details">
+                <div class="description">
+                  <h3 class="description-title">
+                    🇮🇹 ROME ITALY - 4K Walking Tour around the City
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <div class="media-element">
+              <div class="thumbnail">
+                <img src="/build/img/index/calle madrid.jpg" alt="" />
+                <div class="actions">
+                  <span class="span-like">
+                    <svg
+                      width="20"
+                      height="20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M13.281 4c-.76 0-1.456.234-2.07.695-.588.442-.98 1.005-1.211 1.414-.23-.41-.623-.972-1.211-1.414A3.378 3.378 0 0 0 6.719 4C4.599 4 3 5.684 3 7.916c0 2.412 1.995 4.063 5.014 6.561.513.424 1.094.905 1.698 1.418a.445.445 0 0 0 .576 0 171.25 171.25 0 0 1 1.698-1.418C15.006 11.979 17 10.328 17 7.917 17 5.683 15.401 4 13.281 4z"
+                        fill="#767676"
+                        fill-rule="nonzero"
+                      />
+                    </svg>
+                  </span>
+                  <span class="span-collection">
+                    <svg
+                      width="20"
+                      height="20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M6.78 4a2 2 0 0 1 1.093.325L9.502 5.39a2 2 0 0 0 1.093.325H15a2 2 0 0 1 2 2V14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1.78zM10 7.8a.6.6 0 0 0-.6.6v1.8H7.6a.6.6 0 0 0 0 1.2h1.8v1.8a.6.6 0 0 0 1.2 0v-1.801l1.8.001a.6.6 0 0 0 0-1.2h-1.8V8.4a.6.6 0 0 0-.6-.6z"
+                        fill="#767676"
+                        fill-rule="evenodd"
+                      />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+              <div class="details">
+                <div class="description">
+                  <h3 class="description-title">
+                    🇮🇹 ROME ITALY - 4K Walking Tour around the City
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <div class="media-element">
+              <div class="thumbnail">
+                <img src="/build/img/index/calle madrid.jpg" alt="" />
+                <div class="actions">
+                  <span class="span-like">
+                    <svg
+                      width="20"
+                      height="20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M13.281 4c-.76 0-1.456.234-2.07.695-.588.442-.98 1.005-1.211 1.414-.23-.41-.623-.972-1.211-1.414A3.378 3.378 0 0 0 6.719 4C4.599 4 3 5.684 3 7.916c0 2.412 1.995 4.063 5.014 6.561.513.424 1.094.905 1.698 1.418a.445.445 0 0 0 .576 0 171.25 171.25 0 0 1 1.698-1.418C15.006 11.979 17 10.328 17 7.917 17 5.683 15.401 4 13.281 4z"
+                        fill="#767676"
+                        fill-rule="nonzero"
+                      />
+                    </svg>
+                  </span>
+                  <span class="span-collection">
+                    <svg
+                      width="20"
+                      height="20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M6.78 4a2 2 0 0 1 1.093.325L9.502 5.39a2 2 0 0 0 1.093.325H15a2 2 0 0 1 2 2V14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1.78zM10 7.8a.6.6 0 0 0-.6.6v1.8H7.6a.6.6 0 0 0 0 1.2h1.8v1.8a.6.6 0 0 0 1.2 0v-1.801l1.8.001a.6.6 0 0 0 0-1.2h-1.8V8.4a.6.6 0 0 0-.6-.6z"
+                        fill="#767676"
+                        fill-rule="evenodd"
+                      />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+              <div class="details">
+                <div class="description">
+                  <h3 class="description-title">
+                    🇮🇹 ROME ITALY - 4K Walking Tour around the City
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+        <!-- likes container -->
+        <main class="container-home container-home_uspage">
+          <div class="media-elements">
+            <div class="media-element">
+              <div class="thumbnail">
+                <img src="/build/img/index/calle madrid.jpg" alt="" />
+                <div class="actions">
+                  <span class="span-like">
+                    <svg
+                      width="20"
+                      height="20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M13.281 4c-.76 0-1.456.234-2.07.695-.588.442-.98 1.005-1.211 1.414-.23-.41-.623-.972-1.211-1.414A3.378 3.378 0 0 0 6.719 4C4.599 4 3 5.684 3 7.916c0 2.412 1.995 4.063 5.014 6.561.513.424 1.094.905 1.698 1.418a.445.445 0 0 0 .576 0 171.25 171.25 0 0 1 1.698-1.418C15.006 11.979 17 10.328 17 7.917 17 5.683 15.401 4 13.281 4z"
+                        fill="#767676"
+                        fill-rule="nonzero"
+                      />
+                    </svg>
+                  </span>
+                  <span class="span-collection">
+                    <svg
+                      width="20"
+                      height="20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M6.78 4a2 2 0 0 1 1.093.325L9.502 5.39a2 2 0 0 0 1.093.325H15a2 2 0 0 1 2 2V14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1.78zM10 7.8a.6.6 0 0 0-.6.6v1.8H7.6a.6.6 0 0 0 0 1.2h1.8v1.8a.6.6 0 0 0 1.2 0v-1.801l1.8.001a.6.6 0 0 0 0-1.2h-1.8V8.4a.6.6 0 0 0-.6-.6z"
+                        fill="#767676"
+                        fill-rule="evenodd"
+                      />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+              <div class="details">
+                <div class="description">
+                  <h3 class="description-title">
+                    🇮🇹 ROME ITALY - 4K Walking Tour around the City
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <div class="media-element">
+              <div class="thumbnail">
+                <img src="/build/img/index/calle madrid.jpg" alt="" />
+                <div class="actions">
+                  <span class="span-like">
+                    <svg
+                      width="20"
+                      height="20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M13.281 4c-.76 0-1.456.234-2.07.695-.588.442-.98 1.005-1.211 1.414-.23-.41-.623-.972-1.211-1.414A3.378 3.378 0 0 0 6.719 4C4.599 4 3 5.684 3 7.916c0 2.412 1.995 4.063 5.014 6.561.513.424 1.094.905 1.698 1.418a.445.445 0 0 0 .576 0 171.25 171.25 0 0 1 1.698-1.418C15.006 11.979 17 10.328 17 7.917 17 5.683 15.401 4 13.281 4z"
+                        fill="#767676"
+                        fill-rule="nonzero"
+                      />
+                    </svg>
+                  </span>
+                  <span class="span-collection">
+                    <svg
+                      width="20"
+                      height="20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M6.78 4a2 2 0 0 1 1.093.325L9.502 5.39a2 2 0 0 0 1.093.325H15a2 2 0 0 1 2 2V14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1.78zM10 7.8a.6.6 0 0 0-.6.6v1.8H7.6a.6.6 0 0 0 0 1.2h1.8v1.8a.6.6 0 0 0 1.2 0v-1.801l1.8.001a.6.6 0 0 0 0-1.2h-1.8V8.4a.6.6 0 0 0-.6-.6z"
+                        fill="#767676"
+                        fill-rule="evenodd"
+                      />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+              <div class="details">
+                <div class="description">
+                  <h3 class="description-title">
+                    🇮🇹 ROME ITALY - 4K Walking Tour around the City
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+        <!-- collection-container -->
+        <main class="container-home container-home_uspage">
+          <div class="media-elements media-elements_collections">
+            <div class="media-element">
+              <div class="thumbnail">
+                <img src="/build/img/index/calle madrid.jpg" alt="" />
+              </div>
+              <div class="details_collection">
+                <div class="description_collection">
+                  <h3 class="description-title_collection">
+                    Somethings never change
+                  </h3>
+                  <span class="description-vr">
+                    <img
+                      src="/build/img/search_page/vr-icon.png"
+                      alt=""
+                      class="description-vr_icon"
+                    />
+                    37
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="media-element">
+              <div class="thumbnail">
+                <img src="/build/img/index/calle madrid.jpg" alt="" />
+              </div>
+              <div class="details_collection">
+                <div class="description_collection">
+                  <h3 class="description-title_collection">
+                    When collection name is too long so can’t be one line
+                    sentence
+                  </h3>
+                  <span class="description-vr">
+                    <img
+                      src="/build/img/search_page/vr-icon.png"
+                      alt=""
+                      class="description-vr_icon"
+                    />
+                    37
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="no-collections">
+            <h3 class="no-collections_title">Organize your inspiration</h3>
+            <div class="no-collections_text">
+              <p>
+                Save interesting VR into personalized collections, and discover
+                new and interesting recommendations along the way. When
+                browsing, just hover over a VR and click the Save button.
+              </p>
+            </div>
+            <div class="no-collections_button">
+              <a href="#">
+                <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M6.78 4a2 2 0 0 1 1.093.325L9.502 5.39a2 2 0 0 0 1.093.325H15a2 2 0 0 1 2 2V14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1.78zM10 7.8a.6.6 0 0 0-.6.6v1.8H7.6a.6.6 0 0 0 0 1.2h1.8v1.8a.6.6 0 0 0 1.2 0v-1.801l1.8.001a.6.6 0 0 0 0-1.2h-1.8V8.4a.6.6 0 0 0-.6-.6z"
+                    fill="#767676"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+                Save
+              </a>
+            </div>
+          </div>
+        </main>
+        <!-- stats-container -->
+        <main class="container-home container-home_uspage">
+          <div class="charts">
+            <div class="views-chart">
+              <h3 class="views-chart_title">Views</h3>
+              <div class="views-chart_number">
+                123,265,456
+                <div class="views-chart_filter">
+                  <form action="">
+                    <select name="views" id="views" class="select">
+                      <option value="last30days">Last 30 days</option>
+                      <option value="alltime">All time</option>
+                    </select>
+                  </form>
+                </div>
+                <div class="views-number_chart">
+                  <canvas
+                    id="views-chart"
+                    width="636px"
+                    height="203px"
+                  ></canvas>
+                </div>
+              </div>
+            </div>
+            <div class="likes-chart">
+              <h3 class="likes-chart_title">Likes</h3>
+              <div class="likes-chart_number">
+                123,265,456
+                <div class="likes-chart_filter">
+                  <form action="">
+                    <select name="likes" id="likes" class="select">
+                      <option value="last30days">Last 30 days</option>
+                      <option value="alltime">All time</option>
+                    </select>
+                  </form>
+                </div>
+                <div class="likes-number_chart">
+                  <canvas id="likes-chart" width="636" height="203"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+          <h4 class="media-elements_title">Your immersive videos</h4>
+          <div class="media-elements">
+            <div class="media-element">
+              <div class="thumbnail">
+                <img src="/build/img/index/calle madrid.jpg" alt="" />
+                <div class="actions">
+                  <span class="span-edit"> Edit </span>
+                  <span class="span-time_icon">
+                    <span class="circle1"></span>
+                    <span class="circle2"></span>
+                  </span>
+                  <span class="span-time"> 20:28 </span>
+                </div>
+              </div>
+              <div class="details">
+                <div class="description">
+                  <h3 class="description-title">
+                    🇮🇹 ROME ITALY - 4K Walking Tour around the City
+                  </h3>
+                  <div class="views">
+                    <span class="views-text">Views</span>
+                    <span class="views-number">5,034</span>
+                    .
+                    <span class="views-date"> 2021.09.12 </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="media-element">
+              <div class="thumbnail">
+                <img src="/build/img/index/calle madrid.jpg" alt="" />
+                <div class="actions">
+                  <span class="span-edit"> Edit </span>
+                  <span class="span-time_icon">
+                    <span class="circle1"></span>
+                    <span class="circle2"></span>
+                  </span>
+                  <span class="span-time"> 20:28 </span>
+                </div>
+              </div>
+              <div class="details">
+                <div class="description">
+                  <h3 class="description-title">
+                    🇮🇹 ROME ITALY - 4K Walking Tour around the City
+                  </h3>
+                  <div class="views">
+                    <span class="views-text">Views</span>
+                    <span class="views-number">5,034</span>
+                    .
+                    <span class="views-date"> 2021.09.12 </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+      <!------------------FOOTER------------------->
+      <footer class="footer">
+        <div class="container footer-logo">
+          <a href="/">
+            <img src="/build/img/index/combined-shape-2 (2).png" alt=""
+          /></a>
+          <span>Share your space</span>
+        </div>
+      </footer>
+    </div>
+    <!------------------SCRIPTS------------------->
+    <!--Custom javascript-->
+    <script src="build/js/bundle.min.js"></script>
+  </body>
+</html>

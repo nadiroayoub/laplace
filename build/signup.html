@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Page title-->
+    <title>Sign Up | Laplace</title>
+    <!--Fonts used - cdn-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!--Fontwesome icon-->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+    <!--Local style file-->
+    <link rel="stylesheet" href="build/css/app.css" />
+  </head>
+  <body>
+    <div id="fb-root"></div>
+    <script
+      async
+      defer
+      crossorigin="anonymous"
+      src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v11.0&appId=537555550655230&autoLogAppEvents=1"
+      nonce="WUQsy61b"
+    ></script>
+
+    <!------------------MAIN CONTAINER------------------->
+    <div class="main-container_signup">
+      <section class="auth-sidebar">
+        <div class="auth-sidebar-content">
+          <header class="header">
+            <a href="/" class="logo">
+              <img src="build/img/auth/combined-shape-2.png" alt="" />
+              <img src="build/img/auth/combined-shape-2 v black.png" alt="" />
+            </a>
+            <h1>An experience immersed in untouched, preserved world.</h1>
+          </header>
+          <footer class="footer">
+            <p class="attribution">Uploaded by Kevin Park</p>
+          </footer>
+        </div>
+      </section>
+      <section class="content">
+        <main>
+          <div class="auth-content">
+            <h2>Sign up to Laplace</h2>
+            <div class="auth-connections">
+              <p>
+                Already have an account?
+                <a href="signin.html">Sign in</a>
+              </p>
+              <div class="facebook-connect-btn">
+                <div
+                  class="fb-login-button"
+                  data-width="246"
+                  data-size="large"
+                  data-button-type="continue_with"
+                  data-layout="default"
+                  data-auto-logout-link="false"
+                  data-use-continue-as="false"
+                ></div>
+              </div>
+            </div>
+            <span class="divider">OR</span>
+            <div class="auth-form signup-form">
+              <form action="" id="new_user">
+                <div class="form-field-group">
+                  <div class="form-field">
+                    <fieldset class="user_name">
+                      <label for="user_name">Name</label>
+                      <input
+                        id="user_name"
+                        class="text-input"
+                        name="user_name"
+                        type="text"
+                      />
+                    </fieldset>
+                  </div>
+                  <div class="form-field">
+                    <fieldset class="user_login">
+                      <label for="user_login">Username</label>
+                      <input
+                        id="user_login"
+                        class="text-input"
+                        autocapitalize="on"
+                        name="user_name"
+                        type="text"
+                      />
+                    </fieldset>
+                  </div>
+                </div>
+                <div class="form-field">
+                  <fieldset class="user_email">
+                    <label for="user_email">Email</label>
+                    <input
+                      id="user_email"
+                      class="text-input"
+                      type="text"
+                      name="user_email"
+                    />
+                  </fieldset>
+                </div>
+                <div class="form-field">
+                  <fieldset class="user_password">
+                    <label for="user_password">Password</label>
+                    <input
+                      id="user_password"
+                      class="text-input"
+                      placeholder="8+ characters"
+                      type="password"
+                      name="user_password"
+                    />
+                  </fieldset>
+                </div>
+                <div class="form-field form-field__terms">
+                  <fieldset>
+                    <label for="user_agree_to_terms">
+                      <input
+                        id="user_agree_to_terms"
+                        name="user_agree_to_terms"
+                        class="user_agree_to_terms"
+                        type="checkbox"
+                      />
+                      Creating an account means you're okay with our
+                      <a target="_blank" href="#">Terms of Service</a>
+                      ,
+                      <a target="_blank" href="#">Privacy Policy</a>
+                      , and our default
+                      <a target="_blank" href="#">Notfication Settings</a>
+                      .
+                    </label>
+                  </fieldset>
+                </div>
+                <div class="form-btns">
+                  <input
+                    type="submit"
+                    class="button form-sub"
+                    name="commit"
+                    value="Sign up"
+                  />
+                </div>
+              </form>
+            </div>
+          </div>
+        </main>
+      </section>
+    </div>
+
+    <!------------------SCRIPTS------------------->
+
+    <script src="build/js/bundle.min.js"></script>
+  </body>
+</html>

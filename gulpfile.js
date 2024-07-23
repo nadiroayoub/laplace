@@ -16,6 +16,7 @@ const paths = {
   scss: "src/scss/**/*.scss",
   js: "src/js/**/*.js",
   imagenes: "src/img/**/*",
+  html: "*.html"
 };
 
 // css is a function that can be called automatically
@@ -55,15 +56,23 @@ function versionWebp() {
     .pipe(notify({ message: "Imagen Completada" }));
 }
 
+function moveHtml() {
+  return src(paths.html)
+    .pipe(dest("build"))
+    .pipe(notify({ message: "HTML Task Complete" }));
+}
+
 function watchArchivos() {
   watch(paths.scss, css);
   watch(paths.js, javascript);
   watch(paths.imagenes, imagenes);
   watch(paths.imagenes, versionWebp);
+  watch(paths.html, moveHtml);
 }
 
 exports.css = css;
 exports.watchArchivos = watchArchivos;
+exports.moveHtml = moveHtml;
 exports.default = parallel(
   css,
   javascript,
